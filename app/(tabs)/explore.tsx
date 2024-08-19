@@ -1,15 +1,67 @@
 import React, { useState } from 'react';
-import Checkbox from 'expo-checkbox';
-import { Text, View, Image, StyleSheet, Platform } from 'react-native';
+import Slider from '@react-native-community/slider';
+import { Switch, Text, View, StyleSheet } from 'react-native';
+import { useTheme } from '@/components/ThemeContext'; // adjust path accordingly
 
 export default function TabTwoScreen() {
-  const [isChecked, setChecked] = useState(false);
+  const [isSoundEnabled, setIsSoundEnabled] = useState(true);
+  const toggleSound = () => setIsSoundEnabled(previousState => !previousState);
+
+  const { isDarkMode, toggleTheme, themeStyles } = useTheme();
+
+  const [isLanguageSwitched, setIsLanguageSwitched] = useState(false);
+  const toggleLanguage = () => setIsLanguageSwitched(previousState => !previousState);
+
   return (
     <View style={styles.container}>
       <View style={styles.section}>
-      <Checkbox style={styles.checkbox} value={isChecked} onValueChange={setChecked} />
-      <Text style={styles.paragraph}>Normal checkbox</Text>
-    </View>
+        <Text style={[styles.paragraph, { color: themeStyles.textColor }]}>Volume</Text>
+        <Slider
+          style={{ width: 230, height: 50 }}
+          minimumValue={0}
+          maximumValue={100}
+          value={50}
+          thumbTintColor='orange'
+          minimumTrackTintColor="orange"
+          maximumTrackTintColor="#000000"
+        />
+      </View>
+
+      <View style={styles.section}>
+        <Text style={[styles.paragraph, { color: themeStyles.textColor }]}>Sound</Text>
+        <Switch
+          style={styles.soundSwitch}
+          trackColor={{ false: '#767577', true: 'orange' }}
+          thumbColor={isSoundEnabled ? '#f4f3f4' : '#f4f3f4'}
+          ios_backgroundColor="#3e3e3e"
+          onValueChange={toggleSound}
+          value={isSoundEnabled}
+        />
+      </View>
+
+      <View style={styles.section}>
+        <Text style={[styles.paragraph, { color: themeStyles.textColor }]}>Dark Mode</Text>
+        <Switch
+          style={styles.darkModeSwitch}
+          trackColor={{ false: '#767577', true: 'orange' }}
+          thumbColor={isDarkMode ? '#f4f3f4' : '#f4f3f4'}
+          ios_backgroundColor="#3e3e3e"
+          onValueChange={toggleTheme}
+          value={isDarkMode}
+        />
+      </View>
+
+      <View style={styles.section}>
+        <Text style={[styles.paragraph, { color: themeStyles.textColor }]}>Language</Text>
+        <Switch
+          style={styles.languageSwitch}
+          trackColor={{ false: '#767577', true: 'orange' }}
+          thumbColor={isLanguageSwitched ? '#f4f3f4' : '#f4f3f4'}
+          ios_backgroundColor="#3e3e3e"
+          onValueChange={toggleLanguage}
+          value={isLanguageSwitched}
+        />
+      </View>
     </View>
   );
 }
@@ -17,17 +69,26 @@ export default function TabTwoScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    marginHorizontal: 16,
-    marginVertical: 32,
+    marginVertical: 50,
+    display: 'flex',
+    alignItems: 'center',
   },
   section: {
     flexDirection: 'row',
     alignItems: 'center',
+    margin: 20,
   },
   paragraph: {
-    fontSize: 15,
+    fontSize: 25,
+    marginRight: 30,
   },
-  checkbox: {
-    margin: 8,
+  soundSwitch: {
+    paddingLeft: 190,
+  },
+  darkModeSwitch: {
+    paddingRight: 140,
+  },
+  languageSwitch: {
+    paddingRight: 150,
   },
 });
