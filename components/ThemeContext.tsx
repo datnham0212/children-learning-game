@@ -15,7 +15,7 @@ export const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
   };
 
   const themeStyles = {
-    textColor: isDarkMode ? '#FFF' : '#000', // White text in dark mode, black text in light mode
+    textColor: isDarkMode ? 'orange' : '#000', // White text in dark mode, black text in light mode
   };
 
   return (

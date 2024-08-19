@@ -1,37 +1,35 @@
-import { HelloWave } from '@/components/HelloWave';
-import { GameTab } from '@/components/GameTab';
-import React from 'react';
-import { Text, View, Image, StyleSheet, Platform } from 'react-native';
+import { DefaultScreen } from '@/components/DefaultScreen';
+import { GameScreen1 } from '@/components/GameScreen1';
+import { GameScreen2 } from '@/components/GameScreen2';
+import React, { useEffect } from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+// import { Text, View, Image, StyleSheet, Platform } from 'react-native';
+import { useTheme } from '@/components/ThemeContext';
+import { DarkTheme, DefaultTheme } from '@react-navigation/native';
+import { StatusBar } from 'react-native';
+
+const Stack = createNativeStackNavigator();
+
 
 export default function HomeScreen() {
+  const { isDarkMode, themeStyles } = useTheme();
+
+  useEffect(() => {
+    StatusBar.setHidden(true);
+
+    return () => {
+      StatusBar.setHidden(false);
+    };
+  }, []);
+
   return (
-    <View style={styles.container}>
-      <View style={styles.half}>
-        <GameTab/>
-        <GameTab/>
-        <GameTab/>
-      </View>
-      <View style={styles.half}>
-        <GameTab/>
-        <GameTab/>
-        <GameTab/>
-      </View>
-    </View>
+    <NavigationContainer independent={true} theme={isDarkMode ? DarkTheme : DefaultTheme}>
+          <Stack.Navigator initialRouteName='Home'>
+            <Stack.Screen name="Home" component={DefaultScreen} options={{ headerShown: false }} />
+            <Stack.Screen name="Game1" component={GameScreen1} options={{ headerShown: false }} />
+            <Stack.Screen name="Game2" component={GameScreen2} options={{ headerShown: false }} />
+          </Stack.Navigator>
+    </NavigationContainer>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flexDirection: 'row',
-    flex: 1,
-    // borderWidth: 2,
-    // borderStyle: 'solid',
-    // borderColor: 'cyan',
-    // padding: 'auto',
-  },
-
-  half: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-  }});
