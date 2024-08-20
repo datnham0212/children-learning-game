@@ -14,20 +14,20 @@ export function DefaultScreen({ navigation }: { navigation: any }) {
           <Text style={styles.text}>Game 2</Text>
         </Pressable>
 
-        <Pressable onPress={() => navigation.navigate("Game1")} style={styles.button}>
+        <Pressable onPress={() => navigation.navigate("Game3")} style={styles.button}>
           <Text style={styles.text}>Game 3</Text>
         </Pressable>
       </View>
       <View style={styles.half}>
-        <Pressable onPress={() => navigation.navigate("Game1")} style={styles.button}>
+        <Pressable onPress={() => navigation.navigate("Game4")} style={styles.button}>
           <Text style={styles.text}>Game 4</Text>
         </Pressable>
 
-        <Pressable onPress={() => navigation.navigate("Game1")} style={styles.button}>
+        <Pressable onPress={() => navigation.navigate("Game5")} style={styles.button}>
           <Text style={styles.text}>Game 5</Text>
         </Pressable>
 
-        <Pressable onPress={() => navigation.navigate("Game1")} style={styles.button}>
+        <Pressable onPress={() => navigation.navigate("Game6")} style={styles.button}>
           <Text style={styles.text}>Game 6</Text>
         </Pressable>
       </View>

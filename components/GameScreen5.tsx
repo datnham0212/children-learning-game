@@ -1,10 +1,10 @@
 import React from 'react';
 import { View, Text, StyleSheet, Button } from 'react-native';
 
-export function GameScreen1({ navigation }: { navigation: any }) {
+export function GameScreen5({ navigation }: { navigation: any }) {
   return (
     <View style={styles.container}>
-      <Text style={styles.text}>Game 1</Text>
+      <Text style={styles.text}>Game 5</Text>
     </View>
   );
 }
