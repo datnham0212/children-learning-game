@@ -31,7 +31,7 @@ export default function HomeScreen() {
   return (
     <NavigationContainer independent={true} theme={isDarkMode ? DarkTheme : DefaultTheme}>
           <Stack.Navigator initialRouteName='Home'>
-            <Stack.Screen name="Home" component={DefaultScreen} options={{ headerShown: true}} />
+            <Stack.Screen name="Home" component={DefaultScreen} options={{ headerShown: true, title: '' }} />
             <Stack.Screen name="Game1" component={GameScreen1} options={{ headerShown: true, title: '' }} />
             <Stack.Screen name="Game2" component={GameScreen2} options={{ headerShown: true, title: '' }} />
             <Stack.Screen name="Game3" component={GameScreen3} options={{ headerShown: true, title: '' }} />
