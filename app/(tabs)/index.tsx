@@ -13,6 +13,7 @@ import { useTheme } from '@/components/ThemeContext';
 import { DarkTheme, DefaultTheme } from '@react-navigation/native';
 import { StatusBar } from 'react-native';
 import { SimonSays } from '@/components/SimonSays';
+import OptionsScreen from './explore';
 
 const Stack = createNativeStackNavigator();
 
@@ -31,14 +32,15 @@ export default function HomeScreen() {
   return (
     <NavigationContainer independent={true} theme={isDarkMode ? DarkTheme : DefaultTheme}>
           <Stack.Navigator initialRouteName='Home'>
-            <Stack.Screen name="Home" component={DefaultScreen} options={{ headerShown: true, title: '' }} />
+            <Stack.Screen name="Options" component={OptionsScreen} options={{ headerShown: true, title: '' }} />
+
+            <Stack.Screen name="Home" component={DefaultScreen} options={{ headerShown: false }} />
             <Stack.Screen name="Game1" component={GameScreen1} options={{ headerShown: true, title: '' }} />
             <Stack.Screen name="Game2" component={GameScreen2} options={{ headerShown: true, title: '' }} />
             <Stack.Screen name="Game3" component={GameScreen3} options={{ headerShown: true, title: '' }} />
             <Stack.Screen name="Game4" component={GameScreen4} options={{ headerShown: true, title: '' }} />
             <Stack.Screen name="Game5" component={GameScreen5} options={{ headerShown: true, title: '' }} />
             <Stack.Screen name="Game6" component={GameScreen6} options={{ headerShown: true, title: '' }} />
-
 
             <Stack.Screen name="SimonSays" component={SimonSays} options={{ headerShown: false,  presentation: 'modal', animation: 'fade' }} />
           </Stack.Navigator>

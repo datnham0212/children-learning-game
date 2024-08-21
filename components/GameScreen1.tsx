@@ -4,7 +4,7 @@ import { View, Text, StyleSheet, Button } from 'react-native';
 export function GameScreen1({ navigation }: { navigation: any }) {
   return (
     <View style={styles.container}>
-      <Text style={styles.text}>Game 1</Text>
+      <Text style={styles.text}>Simon Says</Text>
       <Button title="Start Game" onPress={() => {
         navigation.navigate('SimonSays');
       }} />

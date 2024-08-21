@@ -1,13 +1,19 @@
 import React from 'react';
-import { GameTab } from './GameTab';
 import { View, Text, StyleSheet, Pressable } from 'react-native';
-
+import { TabBarIcon } from '@/components/navigation/TabBarIcon';
+import { Colors } from '@/constants/Colors';
 export function DefaultScreen({ navigation }: { navigation: any }) {
   return (
     <View style={styles.container}>
+      <Pressable onPress={() => navigation.navigate("Options")} style={styles.option}>
+        <TabBarIcon name={'menu'} color='black' size={42} />  
+      </Pressable>
+      
+    
+    <View style={styles.main}>
       <View style={styles.half}>
         <Pressable onPress={() => navigation.navigate("Game1")} style={styles.button}>
-          <Text style={styles.text}>Game 1</Text>
+          <Text style={styles.text}>Simon Says</Text>
         </Pressable>
 
         <Pressable onPress={() => navigation.navigate("Game2")} style={styles.button}>
@@ -32,11 +38,16 @@ export function DefaultScreen({ navigation }: { navigation: any }) {
         </Pressable>
       </View>
     </View>
+    </View>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
+    flex: 1,
+  },
+
+  main: {
     flexDirection: 'row',
     flex: 1
   },
@@ -64,6 +75,17 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     letterSpacing: 0.25,
     color: 'white',
+  },
+
+  option: {
+    width: 45,
+    height: 45,
+    margin: 6,
+    backgroundColor: 'orange',
+    borderRadius: 10,
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
   }
 
 });

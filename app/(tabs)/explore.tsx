@@ -3,7 +3,7 @@ import Slider from '@react-native-community/slider';
 import { Switch, Text, View, StyleSheet } from 'react-native';
 import { useTheme } from '@/components/ThemeContext'; 
 
-export default function TabTwoScreen() {
+export default function OptionsScreen() {
   const [isSoundEnabled, setIsSoundEnabled] = useState(true);
   const toggleSound = () => setIsSoundEnabled(previousState => !previousState);
 
