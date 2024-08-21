@@ -12,6 +12,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { useTheme } from '@/components/ThemeContext';
 import { DarkTheme, DefaultTheme } from '@react-navigation/native';
 import { StatusBar } from 'react-native';
+import { SimonSays } from '@/components/SimonSays';
 
 const Stack = createNativeStackNavigator();
 
@@ -37,6 +38,9 @@ export default function HomeScreen() {
             <Stack.Screen name="Game4" component={GameScreen4} options={{ headerShown: true, title: '' }} />
             <Stack.Screen name="Game5" component={GameScreen5} options={{ headerShown: true, title: '' }} />
             <Stack.Screen name="Game6" component={GameScreen6} options={{ headerShown: true, title: '' }} />
+
+
+            <Stack.Screen name="SimonSays" component={SimonSays} options={{ headerShown: false,  presentation: 'modal', animation: 'fade' }} />
           </Stack.Navigator>
     </NavigationContainer>
   );
