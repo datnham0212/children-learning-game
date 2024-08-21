@@ -2,13 +2,14 @@ import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 
 export function SimonSays() {
-  return (
-    <View style={styles.container}>
-      <Text style={styles.text}>Simon Says fuck you!!!</Text>
-      {/* Add your game components and logic here */}
-    </View>
-  );
-}
+
+    return (
+        <View style={styles.container}>
+        <Text style={styles.text}>Simon Says fuck you!!!</Text>
+        {/* Add your game components and logic here */}
+        </View>
+    );
+    }
 
 const styles = StyleSheet.create({
   container: {
