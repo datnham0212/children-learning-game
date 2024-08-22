@@ -1,95 +1,104 @@
 import React from 'react';
-import { View, Text, StyleSheet, Pressable } from 'react-native';
+import { View, StyleSheet, TouchableOpacity } from 'react-native';
 
 export function SimonSays() {
 
     return (
         <View style={styles.container}>
-          <View style={styles.circle}>
-            <View style={styles.upper}>  
-              <Pressable style={styles.yellow} onPress={() => {console.log('Yellow pressed!')}}/>
-              <Pressable style={styles.blue} onPress={() => {console.log('Blue pressed!')}}/>
-            </View>
+            <View style={styles.circle}>
+                <View style={styles.upper}>
+                    <View style={styles.quarterContainer}>
+                        <TouchableOpacity style={styles.yellow} onPress={() => { console.log('Yellow pressed!') }} />
+                    </View>
+                    <View style={styles.quarterContainer}>
+                        <TouchableOpacity style={styles.blue} onPress={() => { console.log('Blue pressed!') }} />
+                    </View>
+                </View>
 
-            <View style={styles.lower}>
-              <Pressable style={styles.red} onPress={() => {console.log('Red pressed!')}}/>
-              <Pressable style={styles.green} onPress={() => {console.log('Green pressed!')}}/>
+                <View style={styles.lower}>
+                    <View style={styles.quarterContainer}>
+                        <TouchableOpacity style={styles.red} onPress={() => { console.log('Red pressed!') }} />
+                    </View>
+                    <View style={styles.quarterContainer}>
+                        <TouchableOpacity style={styles.green} onPress={() => { console.log('Green pressed!') }} />
+                    </View>
+                </View>
             </View>
-          </View>
         </View>
     );
-    }
+}
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: 'black',  // This makes the screen feel separate and immersive
-  },
-  text: {
-    fontSize: 24,
-    fontWeight: 'bold',
-    color: 'white',  // Match text color to the immersive screen style
-  },
+    container: {
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: 'black',
+    },
 
-  circle: {
-    width: 360,
-    height: 360,
-    display: 'flex',
-    flexDirection: 'column',
-    borderWidth: 1,
-    borderColor: 'white',
-    borderRadius: 180,
-  },
+    circle: {
+        width: 360,
+        height: 360,
+        borderRadius: 180,
+        overflow: 'hidden',
+        position: 'relative',
+    },
 
-  upper: {
-    flex: 0.5,
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    borderTopLeftRadius: 180,
-    borderTopRightRadius: 180,
-  },
+    upper: {
+        flex: 1,
+        flexDirection: 'row',
+    },
 
-  lower: {
-    flex: 0.5,
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    borderBottomLeftRadius: 180,
-    borderBottomRightRadius: 180,
-  },
+    lower: {
+        flex: 1,
+        flexDirection: 'row',
+    },
 
-  yellow: {
-    flex: 0.5,
-    width: 180,
-    height: 180,
-    backgroundColor: 'yellow',
-    borderTopLeftRadius: 180,
-  },
+    quarterContainer: {
+        width: 180,
+        height: 180,
+        overflow: 'hidden',
+    },
 
-  blue: {
-    flex: 0.5,
-    width: 180,
-    height: 180,
-    backgroundColor: 'blue',
-    borderTopRightRadius: 180,
-  },
+    yellow: {
+        width: 360,
+        height: 360,
+        backgroundColor: 'yellow',
+        borderTopLeftRadius: 180,
+        position: 'absolute',
+        top: 0,
+        left: 0,
+    },
 
-  red: {
-    flex: 0.5,
-    width: 180,
-    height: 180,
-    backgroundColor: 'red',
-    borderBottomLeftRadius: 180,
-  },
+    blue: {
+        width: 360,
+        height: 360,
+        backgroundColor: 'blue',
+        borderTopRightRadius: 180,
+        position: 'absolute',
+        top: 0,
+        right: 0,
+    },
 
-  green: {
-    flex: 0.5,
-    width: 180,
-    height: 180,
-    backgroundColor: 'green',
-    borderBottomRightRadius: 180,
-  }
+    red: {
+        width: 360,
+        height: 360,
+        backgroundColor: 'red',
+        borderBottomLeftRadius: 180,
+        position: 'absolute',
+        bottom: 0,
+        left: 0,
+    },
+
+    green: {
+        width: 360,
+        height: 360,
+        backgroundColor: 'green',
+        borderBottomRightRadius: 180,
+        position: 'absolute',
+        bottom: 0,
+        right: 0,
+    },
 });
+
+
