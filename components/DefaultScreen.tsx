@@ -1,12 +1,15 @@
 import React from 'react';
 import { View, Text, StyleSheet, Pressable } from 'react-native';
 import { TabBarIcon } from '@/components/navigation/TabBarIcon';
-import { Colors } from '@/constants/Colors';
+import { useTheme } from '@/components/ThemeContext'; 
 export function DefaultScreen({ navigation }: { navigation: any }) {
+
+  const { isDarkMode } = useTheme();
+
   return (
     <View style={styles.container}>
       <Pressable onPress={() => navigation.navigate("Options")} style={styles.option}>
-        <TabBarIcon name={'menu'} color='black' size={42} />  
+        <TabBarIcon name={'menu'} color = {isDarkMode ? '#fff' : '#000'} size={45} />  
       </Pressable>
       
     
@@ -26,7 +29,7 @@ export function DefaultScreen({ navigation }: { navigation: any }) {
       </View>
       <View style={styles.half}>
         <Pressable onPress={() => navigation.navigate("Game4")} style={styles.button}>
-          <Text style={styles.text}>Game 4</Text>
+          <Text style={styles.text}>Math</Text>
         </Pressable>
 
         <Pressable onPress={() => navigation.navigate("Game5")} style={styles.button}>
@@ -81,7 +84,6 @@ const styles = StyleSheet.create({
     width: 45,
     height: 45,
     margin: 6,
-    backgroundColor: 'orange',
     borderRadius: 10,
     display: 'flex',
     justifyContent: 'center',
