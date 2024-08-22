@@ -20,7 +20,7 @@ export function DefaultScreen({ navigation }: { navigation: any }) {
         </Pressable>
 
         <Pressable onPress={() => navigation.navigate("Game2")} style={styles.button}>
-          <Text style={styles.text}>Game 2</Text>
+          <Text style={styles.text}>Picture Guessing</Text>
         </Pressable>
 
         <Pressable onPress={() => navigation.navigate("Game3")} style={styles.button}>

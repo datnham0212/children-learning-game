@@ -8,12 +8,12 @@ import { GameScreen6 } from '@/components/GameScreen6';
 import React, { useEffect } from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-// import { Text, View, Image, StyleSheet, Platform } from 'react-native';
 import { useTheme } from '@/components/ThemeContext';
 import { DarkTheme, DefaultTheme } from '@react-navigation/native';
 import { StatusBar } from 'react-native';
 import { SimonSays } from '@/components/SimonSays';
 import OptionsScreen from './explore';
+import { PictureGuessing } from '@/components/PictureGuessing';
 
 const Stack = createNativeStackNavigator();
 
@@ -43,6 +43,7 @@ export default function HomeScreen() {
             <Stack.Screen name="Game6" component={GameScreen6} options={{ headerShown: true, title: '' }} />
 
             <Stack.Screen name="SimonSays" component={SimonSays} options={{ headerShown: false,  presentation: 'modal', animation: 'fade' }} />
+            <Stack.Screen name="PictureGuessing" component={PictureGuessing} options={{ headerShown: false,  presentation: 'modal', animation: 'fade' }} />
           </Stack.Navigator>
     </NavigationContainer>
   );

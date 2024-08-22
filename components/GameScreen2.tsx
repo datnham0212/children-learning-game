@@ -1,11 +1,11 @@
 import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet, Button } from 'react-native';
 
 export function GameScreen2({ navigation }: { navigation: any }) {
   return (
     <View style={styles.container}>
-      <Text style={styles.text}>Game 2</Text>
-      {/* <Button title="Go back Home" onPress={() => navigation.navigate("Home")} /> */}
+      <Text style={styles.text}>Picture Guessing</Text>
+      <Button title="Start Game" onPress={() => navigation.navigate("PictureGuessing")} />
     </View>
   );
 }
