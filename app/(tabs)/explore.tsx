@@ -21,8 +21,8 @@ export default function OptionsScreen() {
           minimumValue={0}
           maximumValue={100}
           value={50}
-          thumbTintColor='orange'
-          minimumTrackTintColor="orange"
+          thumbTintColor='#09ad50'
+          minimumTrackTintColor="#09ad50"
           maximumTrackTintColor="#000000"
         />
       </View>
@@ -31,7 +31,7 @@ export default function OptionsScreen() {
         <Text style={[styles.paragraph, { color: themeStyles.textColor }]}>Sound</Text>
         <Switch
           style={styles.soundSwitch}
-          trackColor={{ false: '#767577', true: 'orange' }}
+          trackColor={{ false: '#767577', true: '#09ad50' }}
           thumbColor={isSoundEnabled ? '#f4f3f4' : '#f4f3f4'}
           ios_backgroundColor="#3e3e3e"
           onValueChange={toggleSound}
@@ -43,7 +43,7 @@ export default function OptionsScreen() {
         <Text style={[styles.paragraph, { color: themeStyles.textColor }]}>Dark Mode</Text>
         <Switch
           style={styles.darkModeSwitch}
-          trackColor={{ false: '#767577', true: 'orange' }}
+          trackColor={{ false: '#767577', true: '#09ad50' }}
           thumbColor={isDarkMode ? '#f4f3f4' : '#f4f3f4'}
           ios_backgroundColor="#3e3e3e"
           onValueChange={toggleTheme}
@@ -55,7 +55,7 @@ export default function OptionsScreen() {
         <Text style={[styles.paragraph, { color: themeStyles.textColor }]}>Language</Text>
         <Switch
           style={styles.languageSwitch}
-          trackColor={{ false: '#767577', true: 'orange' }}
+          trackColor={{ false: '#767577', true: '#09ad50' }}
           thumbColor={isLanguageSwitched ? '#f4f3f4' : '#f4f3f4'}
           ios_backgroundColor="#3e3e3e"
           onValueChange={toggleLanguage}
