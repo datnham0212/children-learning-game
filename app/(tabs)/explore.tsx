@@ -13,7 +13,7 @@ export default function OptionsScreen() {
   const toggleLanguage = () => setIsLanguageSwitched(previousState => !previousState);
 
   return (
-    <View style={styles.container}>
+    <View style={[styles.container, { backgroundColor: themeStyles.bgColor }]}>
       <View style={styles.section}>
         <Text style={[styles.paragraph, { color: themeStyles.textColor }]}>Volume</Text>
         <Slider
@@ -69,7 +69,7 @@ export default function OptionsScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    marginVertical: 50,
+    // marginVertical: 50,
     display: 'flex',
     alignItems: 'center',
   },

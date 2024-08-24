@@ -4,10 +4,10 @@ import { TabBarIcon } from '@/components/navigation/TabBarIcon';
 import { useTheme } from '@/components/ThemeContext'; 
 export function DefaultScreen({ navigation }: { navigation: any }) {
 
-  const { isDarkMode } = useTheme();
+  const { isDarkMode, toggleTheme, themeStyles } = useTheme();
 
   return (
-    <View style={styles.container}>
+    <View style={[styles.container, , { backgroundColor: themeStyles.bgColor }]}>
       <Pressable onPress={() => navigation.navigate("Options")} style={styles.option}>
         <TabBarIcon name={'menu'} color = {isDarkMode ? '#fff' : '#000'} size={45} />  
       </Pressable>
@@ -68,8 +68,8 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     borderRadius: 20,
-    borderWidth: 2,
-    margin: 20,
+    // borderWidth: 2,
+    margin: 25,
   },
 
   text: {
