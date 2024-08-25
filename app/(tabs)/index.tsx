@@ -13,7 +13,10 @@ import { DarkTheme, DefaultTheme } from '@react-navigation/native';
 import { StatusBar } from 'react-native';
 import { SimonSays } from '@/components/SimonSays';
 import OptionsScreen from './explore';
-import { PictureGuessing } from '@/components/PictureGuessing';
+import { ShapeGuessing } from '@/components/ShapeGuessing';
+import { ColorGuessing } from '@/components/ColorGuessing';
+import { AnimalGuessing } from '@/components/AnimalGuessing';
+import { FruitGuessing } from '@/components/FruitGuessing';
 
 const Stack = createNativeStackNavigator();
 
@@ -43,7 +46,10 @@ export default function HomeScreen() {
             <Stack.Screen name="Game6" component={GameScreen6} options={{ headerShown: true, title: '' , headerStyle: { backgroundColor: themeStyles.bgColor }}} />
 
             <Stack.Screen name="SimonSays" component={SimonSays} options={{ headerShown: false,  presentation: 'modal', animation: 'fade' }} />
-            <Stack.Screen name="PictureGuessing" component={PictureGuessing} options={{ headerShown: false,  presentation: 'modal', animation: 'fade' }} />
+            <Stack.Screen name="ShapeGuessing" component={ShapeGuessing} options={{ headerShown: false,  presentation: 'modal', animation: 'fade' }} />
+            <Stack.Screen name="ColorGuessing" component={ColorGuessing} options={{ headerShown: false,  presentation: 'modal', animation: 'fade' }} />
+            <Stack.Screen name="AnimalGuessing" component={AnimalGuessing} options={{ headerShown: false,  presentation: 'modal', animation: 'fade' }} />
+            <Stack.Screen name="FruitGuessing" component={FruitGuessing} options={{ headerShown: false,  presentation: 'modal', animation: 'fade' }} />
           </Stack.Navigator>
     </NavigationContainer>
   );
