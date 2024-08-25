@@ -6,31 +6,44 @@ export function GameScreen2({ navigation }: { navigation: any }) {
 
   const { isDarkMode, toggleTheme, themeStyles } = useTheme();
   const [ selection, setSelection ] = useState('ShapeGuessing'); 
+  
   return (
     <View style={[styles.container, { backgroundColor: themeStyles.bgColor }]}>
       <Text style={[styles.text, {color: themeStyles.textColor}]}>Picture Guessing</Text>
       <Text style={[styles.text, {color: themeStyles.textColor}]}>(Select one below)</Text>
       <View style={styles.main}>
         <View style={styles.half}>
-          <Pressable onPress={() => setSelection('ShapeGuessing')} style={styles.button}>
+          <Pressable 
+            onPress={() => setSelection('ShapeGuessing') } 
+            style={[styles.button, { backgroundColor: selection === 'ShapeGuessing' ? 'orange' : '#09ad50' }]}
+          >
             <Text style={styles.text}>Shapes</Text>
           </Pressable>
 
-          <Pressable onPress={() => setSelection('ColorGuessing')} style={styles.button}>
+          <Pressable 
+            onPress={() => setSelection('ColorGuessing')} 
+            style={[styles.button, { backgroundColor: selection === 'ColorGuessing' ? 'orange' : '#09ad50' }]}
+          >
             <Text style={styles.text}>Colors</Text>
           </Pressable>
         </View>
 
         <View style={styles.half}>
-          <Pressable onPress={() => setSelection('AnimalGuessing')} style={styles.button}>
+          <Pressable 
+            onPress={() => setSelection('AnimalGuessing')} 
+            style={[styles.button, { backgroundColor: selection === 'AnimalGuessing' ? 'orange' : '#09ad50' }]}
+          >
             <Text style={styles.text}>Animals</Text>
           </Pressable>
 
-          <Pressable onPress={() => setSelection('FruitGuessing')} style={styles.button}>
+          <Pressable 
+            onPress={() => setSelection('FruitGuessing')} 
+            style={[styles.button, { backgroundColor: selection === 'FruitGuessing' ? 'orange' : '#09ad50' }]}
+          >
             <Text style={styles.text}>Fruits</Text>
           </Pressable>
         </View>
-    </View>
+      </View>
       <Button title="Start Game" onPress={() => navigation.navigate(selection)} />
     </View>
   );
@@ -55,13 +68,11 @@ const styles = StyleSheet.create({
   },
 
   button: {
-    backgroundColor: '#09ad50',
     width: 150,
     height: 150,
     justifyContent: 'center',
     alignItems: 'center',
     borderRadius: 20,
-    // borderWidth: 2,
     margin: 25,
   },
 
