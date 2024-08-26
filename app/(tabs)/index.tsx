@@ -17,6 +17,7 @@ import { ShapeGuessing } from '@/components/ShapeGuessing';
 import { ColorGuessing } from '@/components/ColorGuessing';
 import { AnimalGuessing } from '@/components/AnimalGuessing';
 import { FruitGuessing } from '@/components/FruitGuessing';
+import { SchulteTable } from '@/components/SchulteTable';
 
 const Stack = createNativeStackNavigator();
 
@@ -50,6 +51,7 @@ export default function HomeScreen() {
             <Stack.Screen name="ColorGuessing" component={ColorGuessing} options={{ headerShown: false,  presentation: 'modal', animation: 'fade' }} />
             <Stack.Screen name="AnimalGuessing" component={AnimalGuessing} options={{ headerShown: false,  presentation: 'modal', animation: 'fade' }} />
             <Stack.Screen name="FruitGuessing" component={FruitGuessing} options={{ headerShown: false,  presentation: 'modal', animation: 'fade' }} />
+            <Stack.Screen name="SchulteTable" component={SchulteTable} options={{ headerShown: false,  presentation: 'modal', animation: 'fade' }} />
           </Stack.Navigator>
     </NavigationContainer>
   );

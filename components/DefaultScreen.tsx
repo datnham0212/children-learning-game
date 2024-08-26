@@ -24,7 +24,7 @@ export function DefaultScreen({ navigation }: { navigation: any }) {
         </Pressable>
 
         <Pressable onPress={() => navigation.navigate("Game3")} style={styles.button}>
-          <Text style={styles.text}>Game 3</Text>
+          <Text style={styles.text}>Schulte Table</Text>
         </Pressable>
       </View>
       <View style={styles.half}>
