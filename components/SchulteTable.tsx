@@ -1,42 +1,22 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Text, View, Image, StyleSheet, Platform } from 'react-native';
 
 export function SchulteTable() {
+
+    // useEffect(() => {
+    //     const shuffled = shuffledNumbers(1, 25);
+    // }, []);
+
     return (
         <View style={styles.container}>
             
-                    <View style={styles.table}>
-                        <View style={styles.cell} />
-                        <View style={styles.cell} />
-                        <View style={styles.cell} />
-                        <View style={styles.cell} />
-                        <View style={styles.cell} />
-
-                        <View style={styles.cell} />
-                        <View style={styles.cell} />
-                        <View style={styles.cell} />
-                        <View style={styles.cell} />
-                        <View style={styles.cell} />
-                        
-                        <View style={styles.cell} />
-                        <View style={styles.cell} />
-                        <View style={styles.cell} />
-                        <View style={styles.cell} />
-                        <View style={styles.cell} />
-                        
-                        <View style={styles.cell} />
-                        <View style={styles.cell} />
-                        <View style={styles.cell} />
-                        <View style={styles.cell} />
-                        <View style={styles.cell} />
-
-                        <View style={styles.cell} />
-                        <View style={styles.cell} />
-                        <View style={styles.cell} />
-                        <View style={styles.cell} />
-                        <View style={styles.cell} />
+            <View style={styles.table}>
+                {Array.from({length: 25}, (_ ,index) => (
+                    <View key={index} style={styles.cell}>
+                        <Text style={styles.text}>{index + 1}</Text>
                     </View>
-
+                ))}
+            </View>
         </View>
     );
 }
