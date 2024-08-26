@@ -1,20 +1,26 @@
-import React, { useEffect } from 'react';
-import { Text, View, Image, StyleSheet, Platform } from 'react-native';
+import React, { useEffect, useState } from 'react';
+import { Text, View, Image, StyleSheet, Platform, TouchableOpacity } from 'react-native';
+
+const shuffledNumbers = (array : any) => {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
+}
 
 export function SchulteTable() {
-
-    // useEffect(() => {
-    //     const shuffled = shuffledNumbers(1, 25);
-    // }, []);
+    const [numbers, setNumbers] = useState([]);
+    useEffect(() => {
+        const initialNumbers = Array.from({ length: 25 }, (_, index) => index + 1);
+        setNumbers(shuffledNumbers(initialNumbers));
+    }, []);
 
     return (
         <View style={styles.container}>
-            
             <View style={styles.table}>
-                {Array.from({length: 25}, (_ ,index) => (
-                    <View key={index} style={styles.cell}>
-                        <Text style={styles.text}>{index + 1}</Text>
-                    </View>
+                {numbers.map((number, index) => (
+                    <TouchableOpacity style={styles.cell} key={index}><Text>{number}</Text></TouchableOpacity>
                 ))}
             </View>
         </View>
@@ -62,3 +68,5 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
     },
 });
+
+
