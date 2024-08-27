@@ -14,6 +14,8 @@ export function SimonSays() {
                         <TouchableOpacity style={styles.blue} onPress={() => { console.log('Blue pressed!') }} />
                     </View>
                 </View>
+                
+                <View style={styles.middle} />
 
                 <View style={styles.lower}>
                     <View style={styles.quarterContainer}>
@@ -37,11 +39,16 @@ const styles = StyleSheet.create({
     },
 
     circle: {
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
         width: 360,
         height: 360,
         borderRadius: 180,
         overflow: 'hidden',
         position: 'relative',
+        // borderColor: 'white',
+        // borderWidth: 1,
     },
 
     upper: {
@@ -49,9 +56,18 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
     },
 
+    middle: {
+        width: 120,
+        height: 120,
+        borderRadius: 60,
+        zIndex: 1,
+        backgroundColor: 'black',
+    },
+
     lower: {
         flex: 1,
         flexDirection: 'row',
+        top: -60,
     },
 
     quarterContainer: {
