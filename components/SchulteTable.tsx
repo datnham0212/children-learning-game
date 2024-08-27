@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Text, View, Image, StyleSheet, Platform, TouchableOpacity } from 'react-native';
+import { useTheme } from '@/components/ThemeContext'; 
 
 const shuffledNumbers = (array : any) => {
     for (let i = array.length - 1; i > 0; i--) {
@@ -10,6 +11,7 @@ const shuffledNumbers = (array : any) => {
 }
 
 export function SchulteTable() {
+    const { isDarkMode, toggleTheme, themeStyles } = useTheme();
     const [numbers, setNumbers] = useState([]);
     useEffect(() => {
         const initialNumbers = Array.from({ length: 25 }, (_, index) => index + 1);
@@ -17,10 +19,10 @@ export function SchulteTable() {
     }, []);
 
     return (
-        <View style={styles.container}>
+        <View style={[styles.container, { backgroundColor: themeStyles.bgColor }]}>
             <View style={styles.table}>
                 {numbers.map((number, index) => (
-                    <TouchableOpacity style={styles.cell} key={index}><Text>{number}</Text></TouchableOpacity>
+                    <TouchableOpacity style={[styles.cell, { borderColor: themeStyles.borderColor}]} key={index}><Text style={[styles.text, { color: themeStyles.textColor}]}>{number}</Text></TouchableOpacity>
                 ))}
             </View>
         </View>

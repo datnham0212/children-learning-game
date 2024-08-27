@@ -4,7 +4,7 @@ import { DarkTheme, DefaultTheme, ThemeProvider as NavigationThemeProvider } fro
 const ThemeContext = createContext({
   isDarkMode: false,
   toggleTheme: () => {},
-  themeStyles: { textColor: '#000' , bgColor: '#fff'}, // Default styles
+  themeStyles: { textColor: '#000' , bgColor: '#fff', borderColor: '#000'}, // Default styles
 });
 
 export const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
@@ -16,7 +16,8 @@ export const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
 
   const themeStyles = {
     textColor: isDarkMode ? '#fff' : '#000', // White text in dark mode, black text in light mode
-    bgColor: isDarkMode ? '#270d45' : '#fff' // Dark background in dark mode, light background in light mode
+    bgColor: isDarkMode ? '#110d45' : '#fff',
+    borderColor: isDarkMode ? '#fff' : '#000' // Dark background in dark mode, light background in light mode
   };
 
   return (
