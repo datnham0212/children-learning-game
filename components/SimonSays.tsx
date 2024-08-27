@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, StyleSheet, TouchableOpacity } from 'react-native';
+import { View, StyleSheet, TouchableOpacity, Text } from 'react-native';
 
 export function SimonSays() {
 
@@ -14,8 +14,6 @@ export function SimonSays() {
                         <TouchableOpacity style={styles.blue} onPress={() => { console.log('Blue pressed!') }} />
                     </View>
                 </View>
-                
-                <View style={styles.middle} />
 
                 <View style={styles.lower}>
                     <View style={styles.quarterContainer}>
@@ -25,6 +23,8 @@ export function SimonSays() {
                         <TouchableOpacity style={styles.green} onPress={() => { console.log('Green pressed!') }} />
                     </View>
                 </View>
+
+                <View style={styles.middle}></View>
             </View>
         </View>
     );
@@ -60,14 +60,16 @@ const styles = StyleSheet.create({
         width: 120,
         height: 120,
         borderRadius: 60,
-        zIndex: 1,
+        zIndex: 10,
+        top: -120,
         backgroundColor: 'black',
     },
 
     lower: {
         flex: 1,
         flexDirection: 'row',
-        top: -60,
+        zIndex: -1,
+        top: 60,
     },
 
     quarterContainer: {
