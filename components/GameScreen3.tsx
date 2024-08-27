@@ -3,9 +3,12 @@ import { View, Text, StyleSheet, Button } from 'react-native';
 import { useTheme } from './ThemeContext';
 
 export function GameScreen3({ navigation }: { navigation: any }) {
+  
+  const { isDarkMode, toggleTheme, themeStyles } = useTheme();
+
   return (
-    <View style={styles.container}>
-      <Text style={styles.text}>Schulte Table</Text>
+    <View style={[styles.container, { backgroundColor: themeStyles.bgColor }]}>
+      <Text style={[styles.text, {color: themeStyles.textColor}]}>Schulte Table</Text>
       <Button title="Start Game" onPress={() => {
         navigation.navigate('SchulteTable');
       }} />
