@@ -9,7 +9,7 @@ export function GameScreen6({ navigation }: { navigation: any }) {
   return (
     <View style={[styles.container, { backgroundColor: themeStyles.bgColor }]}>
       <Text style={[styles.text, {color: themeStyles.textColor}]}>Game 6</Text>
-      <Button color="black" title="Start Game" onPress={() => {
+      <Button color={isDarkMode ? "#09ad50" : "black"} title="Start Game" onPress={() => {
         // navigation.navigate('');
       }} />
     </View>
