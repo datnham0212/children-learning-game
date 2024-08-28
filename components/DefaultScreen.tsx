@@ -7,7 +7,7 @@ export function DefaultScreen({ navigation }: { navigation: any }) {
   const { isDarkMode, toggleTheme, themeStyles } = useTheme();
 
   return (
-    <View style={[styles.container, , { backgroundColor: themeStyles.bgColor }]}>
+    <View style={[styles.container, { backgroundColor: themeStyles.bgColor }]}>
       <Pressable onPress={() => navigation.navigate("Options")} style={styles.option}>
         <TabBarIcon name={'menu'} color = {isDarkMode ? '#fff' : '#000'} size={45} />  
       </Pressable>
@@ -15,29 +15,29 @@ export function DefaultScreen({ navigation }: { navigation: any }) {
     
     <View style={styles.main}>
       <View style={styles.half}>
-        <Pressable onPress={() => navigation.navigate("Game1")} style={styles.button}>
-          <Text style={styles.text}>Simon Says</Text>
+        <Pressable onPress={() => navigation.navigate("Game1")} style={[styles.button, {backgroundColor: themeStyles.gameTabColor}]}>
+          <Text style={[styles.text, {color: themeStyles.textColor}]}>Simon Says</Text>
         </Pressable>
 
-        <Pressable onPress={() => navigation.navigate("Game2")} style={styles.button}>
-          <Text style={styles.text}>Picture Guessing</Text>
+        <Pressable onPress={() => navigation.navigate("Game2")} style={[styles.button, {backgroundColor: themeStyles.gameTabColor}]}>
+          <Text style={[styles.text, {color: themeStyles.textColor}]}>Picture Guessing</Text>
         </Pressable>
 
-        <Pressable onPress={() => navigation.navigate("Game3")} style={styles.button}>
-          <Text style={styles.text}>Schulte Table</Text>
+        <Pressable onPress={() => navigation.navigate("Game3")} style={[styles.button, {backgroundColor: themeStyles.gameTabColor}]}>
+          <Text style={[styles.text, {color: themeStyles.textColor}]}>Schulte Table</Text>
         </Pressable>
       </View>
       <View style={styles.half}>
-        <Pressable onPress={() => navigation.navigate("Game4")} style={styles.button}>
-          <Text style={styles.text}>Math</Text>
+        <Pressable onPress={() => navigation.navigate("Game4")} style={[styles.button, {backgroundColor: themeStyles.gameTabColor}]}>
+          <Text style={[styles.text, {color: themeStyles.textColor}]}>Math</Text>
         </Pressable>
 
-        <Pressable onPress={() => navigation.navigate("Game5")} style={styles.button}>
-          <Text style={styles.text}>Game 5</Text>
+        <Pressable onPress={() => navigation.navigate("Game5")} style={[styles.button, {backgroundColor: themeStyles.gameTabColor}]}>
+          <Text style={[styles.text, {color: themeStyles.textColor}]}>Game 5</Text>
         </Pressable>
 
-        <Pressable onPress={() => navigation.navigate("Game6")} style={styles.button}>
-          <Text style={styles.text}>Game 6</Text>
+        <Pressable onPress={() => navigation.navigate("Game6")} style={[styles.button, {backgroundColor: themeStyles.gameTabColor}]}>
+          <Text style={[styles.text, {color: themeStyles.textColor}]}>Game 6</Text>
         </Pressable>
       </View>
     </View>
@@ -62,7 +62,7 @@ const styles = StyleSheet.create({
   },
 
   button: {
-    backgroundColor: '#09ad50',
+    backgroundColor: '#fff',
     width: 150,
     height: 150,
     justifyContent: 'center',
@@ -77,7 +77,7 @@ const styles = StyleSheet.create({
     lineHeight: 21,
     fontWeight: 'bold',
     letterSpacing: 0.25,
-    color: 'white',
+    color: '#000',
   },
 
   option: {
