@@ -44,7 +44,7 @@ export function GameScreen2({ navigation }: { navigation: any }) {
           </Pressable>
         </View>
       </View>
-      <Button title="Start Game" onPress={() => navigation.navigate(selection)} />
+      <Button color="black" title="Start Game" onPress={() => navigation.navigate(selection)} />
     </View>
   );
 }

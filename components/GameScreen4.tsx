@@ -9,7 +9,7 @@ export function GameScreen4({ navigation }: { navigation: any }) {
   return (
     <View style={[styles.container, { backgroundColor: themeStyles.bgColor }]}>
       <Text style={[styles.text, {color: themeStyles.textColor}]}>Math</Text>
-      <Button title="Start Game" onPress={() => {
+      <Button color="black" title="Start Game" onPress={() => {
         // navigation.navigate('');
       }} />
     </View>

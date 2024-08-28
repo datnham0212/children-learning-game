@@ -9,7 +9,7 @@ export function GameScreen3({ navigation }: { navigation: any }) {
   return (
     <View style={[styles.container, { backgroundColor: themeStyles.bgColor }]}>
       <Text style={[styles.text, {color: themeStyles.textColor}]}>Schulte Table</Text>
-      <Button title="Start Game" onPress={() => {
+      <Button color="black" title="Start Game" onPress={() => {
         navigation.navigate('SchulteTable');
       }} />
     </View>
