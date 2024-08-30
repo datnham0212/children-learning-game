@@ -4,35 +4,51 @@ import { useTheme } from '@/components/ThemeContext';
 
 const sourceImage = require('@/assets/images/nemo.jpg');
 
-const shuffledPieces = (array : any) => {
-    for (let i = array.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [array[i], array[j]] = [array[j], array[i]];
-    }
-    return array;
-}
-
 
 export function Puzzle() {
-    const { isDarkMode, toggleTheme, themeStyles } = useTheme();
-    const [pieces, setPieces] = useState([]);
+    const { themeStyles } = useTheme();
+    const [pieces, setPieces] = useState<number[]>([]);
+    const [rotationAngles, setRotationAngles] = useState<number[]>([]); // Rotation angles state
+
     useEffect(() => {
-        const initialPosition = Array.from({ length: 9 }, (_, index) => index);
-        setPieces(shuffledPieces(initialPosition));
+        const initialPosition = Array.from({ length: 9 }, (_, index) => index + 1);
+        setPieces(initialPosition);
+        
+        const initialRotations = Array.from({ length: 9 }, () => {
+            const rotations = [0, 90, 180, 270];
+            return rotations[Math.floor(Math.random() * rotations.length)];
+        });
+        setRotationAngles(initialRotations);
     }, []);
+
+    const handlePress = (index: number) => {
+        setRotationAngles((prevAngles) => {
+            const newAngles = [...prevAngles];
+            newAngles[index] = (newAngles[index] + 90) % 360; // Rotate by 90 degrees
+            return newAngles;
+        });
+    };
 
     return (
         <View style={[styles.container, { backgroundColor: themeStyles.bgColor }]}>
             <View style={styles.table}>
                 {pieces.map((piece, index) => (
-                    <Pressable style={[styles.cell, { borderColor: themeStyles.borderColor}]} key={index}>
+                    <Pressable
+                        style={[styles.cell, { borderColor: themeStyles.borderColor }]}
+                        key={index}
+                        onPress={() => handlePress(index)} // Rotate on press
+                    >
+                        <Text style={[styles.text, { color: themeStyles.textColor }]}>
+                            {piece}
+                        </Text>
                         <Image
                             source={sourceImage}
                             style={[
                                 styles.image,
                                 {
-                                    left: -(piece % 3) * 110, // Adjust based on the width of the image
-                                    top: -Math.floor(piece / 3) * 110, // Adjust based on the height of the image
+                                    left: -(index % 3) * 110, // Adjust based on the image width
+                                    top: -Math.floor(index / 3) * 110, // Adjust based on the image height
+                                    transform: [{ rotate: `${rotationAngles[index]}deg` }], // Apply rotation
                                 },
                             ]}
                             resizeMode="cover"
@@ -42,7 +58,6 @@ export function Puzzle() {
             </View>
         </View>
     );
-
 }
 
 const styles = StyleSheet.create({
@@ -57,6 +72,7 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         flexWrap: 'wrap',
         width: 330,
+        height: 330,
     },
 
     cell: {
