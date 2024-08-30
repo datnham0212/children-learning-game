@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import { Text, View, Image, StyleSheet, Platform, TouchableOpacity } from 'react-native';
+import { Text, View, Image, StyleSheet, Platform, TouchableOpacity, Pressable } from 'react-native';
 import { useTheme } from '@/components/ThemeContext'; 
 
+const sourceImage = require('@/assets/images/nemo.jpg');
 
 const shuffledPieces = (array : any) => {
     for (let i = array.length - 1; i > 0; i--) {
@@ -16,7 +17,7 @@ export function Puzzle() {
     const { isDarkMode, toggleTheme, themeStyles } = useTheme();
     const [pieces, setPieces] = useState([]);
     useEffect(() => {
-        const initialPosition = Array.from({ length: 9 }, (_, index) => index + 1);
+        const initialPosition = Array.from({ length: 9 }, (_, index) => index);
         setPieces(shuffledPieces(initialPosition));
     }, []);
 
@@ -24,7 +25,19 @@ export function Puzzle() {
         <View style={[styles.container, { backgroundColor: themeStyles.bgColor }]}>
             <View style={styles.table}>
                 {pieces.map((piece, index) => (
-                    <TouchableOpacity style={[styles.cell, { borderColor: themeStyles.borderColor}]} key={index}><Text style={[styles.text, { color: themeStyles.textColor}]}>{piece}</Text></TouchableOpacity>
+                    <Pressable style={[styles.cell, { borderColor: themeStyles.borderColor}]} key={index}>
+                        <Image
+                            source={sourceImage}
+                            style={[
+                                styles.image,
+                                {
+                                    left: -(piece % 3) * 110, // Adjust based on the width of the image
+                                    top: -Math.floor(piece / 3) * 110, // Adjust based on the height of the image
+                                },
+                            ]}
+                            resizeMode="cover"
+                        />
+                    </Pressable>
                 ))}
             </View>
         </View>
@@ -52,6 +65,13 @@ const styles = StyleSheet.create({
         borderWidth: 1,
         justifyContent: 'center',
         alignItems: 'center',
+        overflow: 'hidden',
+    },
+
+    image: {
+        position: 'absolute',
+        width: 330,
+        height: 330,
     },
 
     text: {

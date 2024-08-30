@@ -22,7 +22,11 @@ export function SchulteTable() {
         <View style={[styles.container, { backgroundColor: themeStyles.bgColor }]}>
             <View style={styles.table}>
                 {numbers.map((number, index) => (
-                    <TouchableOpacity style={[styles.cell, { borderColor: themeStyles.borderColor}]} key={index}><Text style={[styles.text, { color: themeStyles.textColor}]}>{number}</Text></TouchableOpacity>
+                    <TouchableOpacity style={[styles.cell, { borderColor: themeStyles.borderColor}]} key={index}>
+                        <Text style={[styles.text, { color: themeStyles.textColor}]}>
+                            {number}
+                        </Text>
+                    </TouchableOpacity>
                 ))}
             </View>
         </View>
