@@ -43,30 +43,16 @@ const styles = StyleSheet.create({
         display: 'flex',
         flexDirection: 'row',
         flexWrap: 'wrap',
-        width: 350,
-        // height: 350,
-        // borderWidth: 1,
+        width: 330,
     },
 
     cell: {
-        width: 70,
-        height: 70,
+        width: 110,
+        height: 110,
         borderWidth: 1,
         justifyContent: 'center',
         alignItems: 'center',
     },
-
-    // row: {
-    //     borderWidth: 1,
-    //     width: 350,
-    //     height: 70,
-    // },
-
-    // col: {
-    //     borderWidth: 1,
-    //     width: 70,
-    //     height: 350,
-    // },
 
     text: {
         fontSize: 24,
