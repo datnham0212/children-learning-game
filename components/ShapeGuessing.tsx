@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, View, Image, StyleSheet, Platform, Pressable } from 'react-native';
+import { Text, View, Image, StyleSheet, Platform, Pressable, TouchableOpacity } from 'react-native';
 import { useTheme } from '@/components/ThemeContext';
 
 export function ShapeGuessing() {
@@ -8,12 +8,14 @@ export function ShapeGuessing() {
 
     return (
         <View style={[styles.container, { backgroundColor: themeStyles.bgColor }]}>
-            <View style={styles.question} />
+            <View style={styles.question}>
+                
+            </View>
 
             <View style={styles.answers}>
-                <Pressable style={styles.answer} />
-                <Pressable style={styles.answer} />
-                <Pressable style={styles.answer} />
+                <TouchableOpacity style={styles.answer} />
+                <TouchableOpacity style={styles.answer} />
+                <TouchableOpacity style={styles.answer} />
             </View>
         </View>
     );
@@ -37,7 +39,7 @@ const styles = StyleSheet.create({
     },
 
     answers: {
-        flex: 0.5
+        flex: 0.7
     },
 
     answer: {

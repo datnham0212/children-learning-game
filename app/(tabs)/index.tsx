@@ -48,13 +48,13 @@ export default function HomeScreen() {
             <Stack.Screen name="Game6" component={GameScreen6} options={{ headerShown: true, title: '' , headerStyle: { backgroundColor: themeStyles.bgColor }}} />
 
             <Stack.Screen name="SimonSays" component={SimonSays} options={{ headerShown: true, title: '' , headerStyle: { backgroundColor: themeStyles.bgColor }, presentation: 'modal', animation: 'fade' }} />
-            <Stack.Screen name="ShapeGuessing" component={ShapeGuessing} options={{ headerShown: false,  presentation: 'modal', animation: 'fade' }} />
+            <Stack.Screen name="ShapeGuessing" component={ShapeGuessing} options={{ headerShown: true, title: '' , headerStyle: { backgroundColor: themeStyles.bgColor },  presentation: 'modal', animation: 'fade' }} />
             <Stack.Screen name="ColorGuessing" component={ColorGuessing} options={{ headerShown: false,  presentation: 'modal', animation: 'fade' }} />
             <Stack.Screen name="AnimalGuessing" component={AnimalGuessing} options={{ headerShown: false,  presentation: 'modal', animation: 'fade' }} />
             <Stack.Screen name="FruitGuessing" component={FruitGuessing} options={{ headerShown: false,  presentation: 'modal', animation: 'fade' }} />
             <Stack.Screen name="SchulteTable" component={SchulteTable} options={{ headerShown: false,  presentation: 'modal', animation: 'fade' }} />
          
-            <Stack.Screen name="Puzzle" component={Puzzle} options={{ headerShown: false,  presentation: 'modal', animation: 'fade' }} />
+            <Stack.Screen name="Puzzle" component={Puzzle} options={{ headerShown: true, title: '' , headerStyle: { backgroundColor: themeStyles.bgColor },  presentation: 'modal', animation: 'fade' }} />
           </Stack.Navigator>
     </NavigationContainer>
   );
