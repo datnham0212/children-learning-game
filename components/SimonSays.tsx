@@ -1,10 +1,13 @@
 import React from 'react';
 import { View, StyleSheet, TouchableOpacity, Text } from 'react-native';
+import { useTheme } from '@/components/ThemeContext';
 
 export function SimonSays() {
 
+    const { isDarkMode, toggleTheme, themeStyles } = useTheme();
+
     return (
-        <View style={styles.container}>
+        <View style={[styles.container, { backgroundColor: themeStyles.bgColor } ]}>
             <View style={styles.circle}>
                 <View style={styles.upper}>
                     <View style={styles.quarterContainer}>
@@ -24,7 +27,7 @@ export function SimonSays() {
                     </View>
                 </View>
 
-                <View style={styles.middle}></View>
+                <View style={[styles.middle, { backgroundColor: themeStyles.bgColor} ]}></View>
             </View>
         </View>
     );
@@ -35,7 +38,6 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: 'black',
     },
 
     circle: {
@@ -62,7 +64,6 @@ const styles = StyleSheet.create({
         borderRadius: 60,
         zIndex: 10,
         top: -120,
-        backgroundColor: 'black',
     },
 
     lower: {
