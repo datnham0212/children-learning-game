@@ -97,6 +97,12 @@ const styles = StyleSheet.create({
         alignItems: 'center',
     },
 
+    questionText: {
+        fontSize: 24,
+        textAlign: 'center',
+        margin: 10,
+    },
+
     shapeImage: {
         width: 200,
         height: 200,
