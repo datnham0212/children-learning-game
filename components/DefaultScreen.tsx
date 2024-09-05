@@ -4,7 +4,7 @@ import { TabBarIcon } from '@/components/navigation/TabBarIcon';
 import { useTheme } from '@/components/ThemeContext'; 
 export function DefaultScreen({ navigation }: { navigation: any }) {
 
-  const { isDarkMode, toggleTheme, themeStyles } = useTheme();
+  const { isDarkMode, themeStyles } = useTheme();
 
   return (
     <View style={[styles.container, { backgroundColor: themeStyles.bgColor }]}>

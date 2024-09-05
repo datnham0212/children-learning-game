@@ -1,24 +1,31 @@
 import { DefaultScreen } from '@/components/DefaultScreen';
-import { GameScreen1 } from '@/components/GameScreen1';
-import { GameScreen2 } from '@/components/GameScreen2';
-import { GameScreen3 } from '@/components/GameScreen3';
-import { GameScreen4 } from '@/components/GameScreen4';
-import { GameScreen5 } from '@/components/GameScreen5';
-import { GameScreen6 } from '@/components/GameScreen6';
+import OptionsScreen from './explore';
+
+import { GameScreen1 } from '@/components/Game1/GameScreen1';
+import { SimonSays } from '@/components/Game1/SimonSays';
+
+import { GameScreen2 } from '@/components/Game2/GameScreen2';
+import { ShapeGuessing } from '@/components/Game2/ShapeGuessing';
+import { ColorGuessing } from '@/components/Game2/ColorGuessing';
+import { AnimalGuessing } from '@/components/Game2/AnimalGuessing';
+import { FruitGuessing } from '@/components/Game2/FruitGuessing';
+
+import { GameScreen3 } from '@/components/Game3/GameScreen3';
+import { SchulteTable } from '@/components/Game3/SchulteTable';
+
+import { GameScreen4 } from '@/components/Game4/GameScreen4';
+
+import { GameScreen5 } from '@/components/Game5/GameScreen5';
+import { Puzzle } from '@/components/Game5/Puzzle';
+
+import { GameScreen6 } from '@/components/Game6/GameScreen6';
+
 import React, { useEffect } from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { useTheme } from '@/components/ThemeContext';
 import { DarkTheme, DefaultTheme } from '@react-navigation/native';
 import { StatusBar } from 'react-native';
-import { SimonSays } from '@/components/SimonSays';
-import OptionsScreen from './explore';
-import { ShapeGuessing } from '@/components/ShapeGuessing';
-import { ColorGuessing } from '@/components/ColorGuessing';
-import { AnimalGuessing } from '@/components/AnimalGuessing';
-import { FruitGuessing } from '@/components/FruitGuessing';
-import { SchulteTable } from '@/components/SchulteTable';
-import { Puzzle } from '@/components/Puzzle';
 
 const Stack = createNativeStackNavigator();
 
@@ -40,21 +47,26 @@ export default function HomeScreen() {
             <Stack.Screen name="Options" component={OptionsScreen} options={{ headerShown: true, title: '', headerStyle: { backgroundColor: themeStyles.bgColor } }} />
 
             <Stack.Screen name="Home" component={DefaultScreen} options={{ headerShown: false }} />
-            <Stack.Screen name="Game1" component={GameScreen1} options={{ headerShown: true, title: '' , headerStyle: { backgroundColor: themeStyles.bgColor } }} />
-            <Stack.Screen name="Game2" component={GameScreen2} options={{ headerShown: true, title: '' , headerStyle: { backgroundColor: themeStyles.bgColor }}} />
-            <Stack.Screen name="Game3" component={GameScreen3} options={{ headerShown: true, title: '' , headerStyle: { backgroundColor: themeStyles.bgColor }}} />
+
             <Stack.Screen name="Game4" component={GameScreen4} options={{ headerShown: true, title: '' , headerStyle: { backgroundColor: themeStyles.bgColor }}} />
-            <Stack.Screen name="Game5" component={GameScreen5} options={{ headerShown: true, title: '' , headerStyle: { backgroundColor: themeStyles.bgColor }}} />
             <Stack.Screen name="Game6" component={GameScreen6} options={{ headerShown: true, title: '' , headerStyle: { backgroundColor: themeStyles.bgColor }}} />
 
+            <Stack.Screen name="Game1" component={GameScreen1} options={{ headerShown: true, title: '' , headerStyle: { backgroundColor: themeStyles.bgColor } }} />
             <Stack.Screen name="SimonSays" component={SimonSays} options={{ headerShown: true, title: '' , headerStyle: { backgroundColor: themeStyles.bgColor }, presentation: 'modal', animation: 'fade' }} />
+            
+            <Stack.Screen name="Game2" component={GameScreen2} options={{ headerShown: true, title: '' , headerStyle: { backgroundColor: themeStyles.bgColor }}} />
             <Stack.Screen name="ShapeGuessing" component={ShapeGuessing} options={{ headerShown: true, title: '' , headerStyle: { backgroundColor: themeStyles.bgColor },  presentation: 'modal', animation: 'fade' }} />
             <Stack.Screen name="ColorGuessing" component={ColorGuessing} options={{ headerShown: false,  presentation: 'modal', animation: 'fade' }} />
             <Stack.Screen name="AnimalGuessing" component={AnimalGuessing} options={{ headerShown: false,  presentation: 'modal', animation: 'fade' }} />
             <Stack.Screen name="FruitGuessing" component={FruitGuessing} options={{ headerShown: false,  presentation: 'modal', animation: 'fade' }} />
+            
+            <Stack.Screen name="Game3" component={GameScreen3} options={{ headerShown: true, title: '' , headerStyle: { backgroundColor: themeStyles.bgColor }}} />
             <Stack.Screen name="SchulteTable" component={SchulteTable} options={{ headerShown: false,  presentation: 'modal', animation: 'fade' }} />
          
+            <Stack.Screen name="Game5" component={GameScreen5} options={{ headerShown: true, title: '' , headerStyle: { backgroundColor: themeStyles.bgColor }}} />
             <Stack.Screen name="Puzzle" component={Puzzle} options={{ headerShown: true, title: '' , headerStyle: { backgroundColor: themeStyles.bgColor },  presentation: 'modal', animation: 'fade' }} />
+          
+          
           </Stack.Navigator>
     </NavigationContainer>
   );

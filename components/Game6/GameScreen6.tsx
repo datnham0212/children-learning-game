@@ -1,16 +1,16 @@
 import React from 'react';
 import { View, Text, StyleSheet, Button } from 'react-native';
-import { useTheme } from './ThemeContext';
+import { useTheme } from '../../components/ThemeContext';
 
-export function GameScreen1({ navigation }: { navigation: any }) {
-
+export function GameScreen6({ navigation }: { navigation: any }) {
+  
   const { isDarkMode, toggleTheme, themeStyles } = useTheme();
-
+  
   return (
     <View style={[styles.container, { backgroundColor: themeStyles.bgColor }]}>
-      <Text style={[styles.text, {color: themeStyles.textColor}]}>Simon Says</Text>
+      <Text style={[styles.text, {color: themeStyles.textColor}]}>Game 6</Text>
       <Button color={isDarkMode ? "#09ad50" : "black"} title="Start Game" onPress={() => {
-        navigation.navigate('SimonSays');
+        // navigation.navigate('');
       }} />
     </View>
   );
@@ -20,7 +20,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'center',
-    alignItems: 'center'
+    alignItems: 'center',
   },
   text: {
     fontSize: 24,

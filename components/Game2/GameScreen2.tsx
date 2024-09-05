@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { View, Text, StyleSheet, Button, Pressable } from 'react-native';
-import { useTheme } from './ThemeContext';
+import { useTheme } from '../../components/ThemeContext';
 
 export function GameScreen2({ navigation }: { navigation: any }) {
 

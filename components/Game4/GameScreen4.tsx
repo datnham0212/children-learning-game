@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Text, StyleSheet, Button } from 'react-native';
-import { useTheme } from './ThemeContext';
+import { useTheme } from '../../components/ThemeContext';
 
 export function GameScreen4({ navigation }: { navigation: any }) {
   
