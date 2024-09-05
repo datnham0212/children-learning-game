@@ -45,8 +45,6 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         flexWrap: 'wrap',
         width: 350,
-        // height: 350,
-        // borderWidth: 1,
     },
 
     cell: {
@@ -56,18 +54,6 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
     },
-
-    // row: {
-    //     borderWidth: 1,
-    //     width: 350,
-    //     height: 70,
-    // },
-
-    // col: {
-    //     borderWidth: 1,
-    //     width: 70,
-    //     height: 350,
-    // },
 
     text: {
         fontSize: 24,
