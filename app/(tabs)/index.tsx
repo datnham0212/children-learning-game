@@ -1,5 +1,5 @@
 import { DefaultScreen } from '@/components/DefaultScreen';
-import OptionsScreen from './explore';
+import OptionsScreen from './settings';
 
 import { GameScreen1 } from '@/components/Game1/GameScreen1';
 import { SimonSays } from '@/components/Game1/SimonSays';
