@@ -6,14 +6,14 @@ import { renderQuestion, renderResult, handleAnswer } from './Game2Logic';
 const questions = [
     {
         question: "Which color is this?",
-        image: require('@/assets/images/colours/blue.jpg'),
+        // image: require(''),
         options: ["Red", "Blue", "Green"],
         correctAnswer: "Blue",
     },
 
     {
         question: "Which color is this?",
-        image: require('@/assets/images/colours/green.jpg'),
+        // image: require(''),
         options: ["Red", "Blue", "Green"],
         correctAnswer: "Green",
     }

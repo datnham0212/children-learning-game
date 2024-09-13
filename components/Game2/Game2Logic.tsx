@@ -5,7 +5,7 @@ import { game2styles } from "./Game2Style";
 export const renderQuestion = (currentQuestion: { question: any; image: any; options: any; correctAnswer?: string; }, handleAnswer: { (option: any): void; (option: any): void; (arg0: any): void; }) => (
     <View style={game2styles.question}>
         <Text style={game2styles.questionText}>{currentQuestion.question}</Text>
-        <Image source={currentQuestion.image} style={game2styles.image} />
+        {/* <Image source={currentQuestion.image} style={game2styles.image} /> */}
         <View style={game2styles.answers}>
             {currentQuestion.options.map((option: string | number | boolean | React.ReactElement<any, string | React.JSXElementConstructor<any>> | Iterable<React.ReactNode> | React.ReactPortal | null | undefined, index: React.Key | null | undefined) => (
                 <TouchableOpacity key={index} style={game2styles.answer} onPress={() => handleAnswer(option)}>

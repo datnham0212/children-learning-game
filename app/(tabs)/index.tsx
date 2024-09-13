@@ -7,16 +7,12 @@ import { SimonSays } from '@/components/Game1/SimonSays';
 import { GameScreen2 } from '@/components/Game2/GameScreen2';
 import { ShapeGuessing } from '@/components/Game2/ShapeGuessing';
 import { ColorGuessing } from '@/components/Game2/ColorGuessing';
-import { AnimalGuessing } from '@/components/Game2/AnimalGuessing';
-import { FruitGuessing } from '@/components/Game2/FruitGuessing';
 
 import { GameScreen3 } from '@/components/Game3/GameScreen3';
-import { SchulteTable } from '@/components/Game3/SchulteTable';
 
 import { GameScreen4 } from '@/components/Game4/GameScreen4';
 
 import { GameScreen5 } from '@/components/Game5/GameScreen5';
-import { Puzzle } from '@/components/Game5/Puzzle';
 
 import { GameScreen6 } from '@/components/Game6/GameScreen6';
 
@@ -57,14 +53,10 @@ export default function HomeScreen() {
             <Stack.Screen name="Game2" component={GameScreen2} options={{ headerShown: true, title: '' , headerStyle: { backgroundColor: themeStyles.bgColor }}} />
             <Stack.Screen name="ShapeGuessing" component={ShapeGuessing} options={{ headerShown: true, title: '' , headerStyle: { backgroundColor: themeStyles.bgColor },  presentation: 'modal', animation: 'fade' }} />
             <Stack.Screen name="ColorGuessing" component={ColorGuessing} options={{ headerShown: false,  presentation: 'modal', animation: 'fade' }} />
-            <Stack.Screen name="AnimalGuessing" component={AnimalGuessing} options={{ headerShown: false,  presentation: 'modal', animation: 'fade' }} />
-            <Stack.Screen name="FruitGuessing" component={FruitGuessing} options={{ headerShown: false,  presentation: 'modal', animation: 'fade' }} />
             
             <Stack.Screen name="Game3" component={GameScreen3} options={{ headerShown: true, title: '' , headerStyle: { backgroundColor: themeStyles.bgColor }}} />
-            <Stack.Screen name="SchulteTable" component={SchulteTable} options={{ headerShown: false,  presentation: 'modal', animation: 'fade' }} />
          
             <Stack.Screen name="Game5" component={GameScreen5} options={{ headerShown: true, title: '' , headerStyle: { backgroundColor: themeStyles.bgColor }}} />
-            <Stack.Screen name="Puzzle" component={Puzzle} options={{ headerShown: true, title: '' , headerStyle: { backgroundColor: themeStyles.bgColor },  presentation: 'modal', animation: 'fade' }} />
           
           
           </Stack.Navigator>
