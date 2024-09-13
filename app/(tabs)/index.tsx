@@ -2,7 +2,6 @@ import { DefaultScreen } from '@/components/DefaultScreen';
 import OptionsScreen from './settings';
 
 import { GameScreen1 } from '@/components/Game1/GameScreen1';
-import { SimonSays } from '@/components/Game1/SimonSays';
 
 import { GameScreen2 } from '@/components/Game2/GameScreen2';
 import { ShapeGuessing } from '@/components/Game2/ShapeGuessing';
@@ -48,7 +47,6 @@ export default function HomeScreen() {
             <Stack.Screen name="Game6" component={GameScreen6} options={{ headerShown: true, title: '' , headerStyle: { backgroundColor: themeStyles.bgColor }}} />
 
             <Stack.Screen name="Game1" component={GameScreen1} options={{ headerShown: true, title: '' , headerStyle: { backgroundColor: themeStyles.bgColor } }} />
-            <Stack.Screen name="SimonSays" component={SimonSays} options={{ headerShown: true, title: '' , headerStyle: { backgroundColor: themeStyles.bgColor }, presentation: 'modal', animation: 'fade' }} />
             
             <Stack.Screen name="Game2" component={GameScreen2} options={{ headerShown: true, title: '' , headerStyle: { backgroundColor: themeStyles.bgColor }}} />
             <Stack.Screen name="ShapeGuessing" component={ShapeGuessing} options={{ headerShown: true, title: '' , headerStyle: { backgroundColor: themeStyles.bgColor },  presentation: 'modal', animation: 'fade' }} />
