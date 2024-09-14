@@ -2,12 +2,13 @@ import React from 'react';
 import { View, Text, StyleSheet, Pressable } from 'react-native';
 import { TabBarIcon } from '@/components/navigation/TabBarIcon';
 import { useTheme } from '@/components/ThemeContext'; 
+import { SafeAreaView } from 'react-native-safe-area-context';
 export function DefaultScreen({ navigation }: { navigation: any }) {
 
   const { isDarkMode, themeStyles } = useTheme();
 
   return (
-    <View style={[styles.container, { backgroundColor: themeStyles.bgColor }]}>
+    <SafeAreaView style={[styles.container, { backgroundColor: themeStyles.bgColor }]}>
       <Pressable onPress={() => navigation.navigate("Options")} style={styles.option}>
         <TabBarIcon name={'menu'} color = {isDarkMode ? '#fff' : '#000'} size={45} />  
       </Pressable>
@@ -16,32 +17,22 @@ export function DefaultScreen({ navigation }: { navigation: any }) {
     <View style={styles.main}>
       <View style={styles.half}>
         <Pressable onPress={() => navigation.navigate("Game1")} style={[styles.button, {backgroundColor: themeStyles.gameTabColor}]}>
-          <Text style={[styles.text, {color: themeStyles.textColor}]}>Simon Says</Text>
+          <Text style={[styles.text, {color: themeStyles.textColor}]}>Trivia</Text>
         </Pressable>
 
         <Pressable onPress={() => navigation.navigate("Game2")} style={[styles.button, {backgroundColor: themeStyles.gameTabColor}]}>
-          <Text style={[styles.text, {color: themeStyles.textColor}]}>Picture Guessing</Text>
+          <Text style={[styles.text, {color: themeStyles.textColor}]}>Multiple choices</Text>
         </Pressable>
 
-        <Pressable onPress={() => navigation.navigate("Game3")} style={[styles.button, {backgroundColor: themeStyles.gameTabColor}]}>
-          <Text style={[styles.text, {color: themeStyles.textColor}]}>Schulte Table</Text>
-        </Pressable>
       </View>
       <View style={styles.half}>
         <Pressable onPress={() => navigation.navigate("Game4")} style={[styles.button, {backgroundColor: themeStyles.gameTabColor}]}>
-          <Text style={[styles.text, {color: themeStyles.textColor}]}>Math</Text>
+          <Text style={[styles.text, {color: themeStyles.textColor}]}>True/False</Text>
         </Pressable>
 
-        <Pressable onPress={() => navigation.navigate("Game5")} style={[styles.button, {backgroundColor: themeStyles.gameTabColor}]}>
-          <Text style={[styles.text, {color: themeStyles.textColor}]}>Puzzle</Text>
-        </Pressable>
-
-        <Pressable onPress={() => navigation.navigate("Game6")} style={[styles.button, {backgroundColor: themeStyles.gameTabColor}]}>
-          <Text style={[styles.text, {color: themeStyles.textColor}]}>Game 6</Text>
-        </Pressable>
       </View>
     </View>
-    </View>
+    </SafeAreaView>
   );
 }
 
