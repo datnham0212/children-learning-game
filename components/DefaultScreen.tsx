@@ -15,22 +15,19 @@ export function DefaultScreen({ navigation }: { navigation: any }) {
       
     
     <View style={styles.main}>
-      <View style={styles.half}>
-        <Pressable onPress={() => navigation.navigate("Game1")} style={[styles.button, {backgroundColor: themeStyles.gameTabColor}]}>
-          <Text style={[styles.text, {color: themeStyles.textColor}]}>Trivia</Text>
+
+        <Pressable onPress={() => navigation.navigate("Game1")} style={[styles.button, {backgroundColor: '#20B2AA'}]}>
+          <Text style={[styles.text, {color: themeStyles.textColor}]}>MULTIPLE CHOICES</Text>
         </Pressable>
 
-        <Pressable onPress={() => navigation.navigate("Game2")} style={[styles.button, {backgroundColor: themeStyles.gameTabColor}]}>
-          <Text style={[styles.text, {color: themeStyles.textColor}]}>Multiple choices</Text>
+        <Pressable onPress={() => navigation.navigate("Game2")} style={[styles.button, {backgroundColor: '#F08080'}]}>
+          <Text style={[styles.text, {color: themeStyles.textColor}]}>TRUE / FALSE</Text>
         </Pressable>
 
-      </View>
-      <View style={styles.half}>
-        <Pressable onPress={() => navigation.navigate("Game4")} style={[styles.button, {backgroundColor: themeStyles.gameTabColor}]}>
-          <Text style={[styles.text, {color: themeStyles.textColor}]}>True/False</Text>
+        <Pressable onPress={() => navigation.navigate("Game3")} style={[styles.button, {backgroundColor: '#FFFF66'},]}>
+          <Text style={[styles.text, {color: themeStyles.textColor}]}>TRIVIA</Text>
         </Pressable>
-
-      </View>
+        
     </View>
     </SafeAreaView>
   );
@@ -42,33 +39,27 @@ const styles = StyleSheet.create({
   },
 
   main: {
-    flexDirection: 'row',
-    flex: 1
-  },
-
-  half: {
     flex: 1,
     justifyContent: 'center',
-    alignItems: 'center'
+    alignItems: 'center',
   },
 
   button: {
     backgroundColor: '#fff',
-    width: 150,
-    height: 150,
+    width: 340,
+    height: 140,
     justifyContent: 'center',
-    alignItems: 'center',
     borderRadius: 20,
-    // borderWidth: 2,
-    margin: 25,
+    margin: 30,
   },
 
   text: {
-    fontSize: 16,
-    lineHeight: 21,
+    fontSize: 22,
+    lineHeight: 24,
     fontWeight: 'bold',
     letterSpacing: 0.25,
     color: '#000',
+    marginLeft: 20,
   },
 
   option: {

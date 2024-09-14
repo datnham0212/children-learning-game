@@ -1,11 +1,11 @@
 import { DefaultScreen } from '@/components/DefaultScreen';
 import OptionsScreen from './settings';
 
-import { GameScreen1 } from '@/components/Game1/GameScreen1';
-
 import { GameScreen2 } from '@/components/Game2/GameScreen2';
-import { ShapeGuessing } from '@/components/Game2/ShapeGuessing';
-import { ColorGuessing } from '@/components/Game2/ColorGuessing';
+
+import { GameScreen1 } from '@/components/Game1/GameScreen1';
+import { ShapeGuessing } from '@/components/Game1/ShapeGuessing';
+import { ColorGuessing } from '@/components/Game1/ColorGuessing';
 
 import { GameScreen3 } from '@/components/Game3/GameScreen3';
 
