@@ -9,16 +9,14 @@ export function GameScreen1({ navigation }: { navigation: any }) {
   
   return (
     <View style={[styles.container, { backgroundColor: themeStyles.bgColor }]}>
-      {/* <Text style={[styles.text, {color: themeStyles.textColor}]}>Picture Guessing</Text>
-      <Text style={[styles.text, {color: themeStyles.textColor}]}>(Select one below)</Text> */}
       <View style={styles.main}>
       
-      <View style={styles.half}>
-      
+        <View style={styles.half}>
+          <Pressable onPress={() => setSelection('ShapeGuessing')} style={[styles.button, {backgroundColor: '#2098b2'}]}/>
         </View>
         
         <View style={styles.half}>
-          
+        <Pressable onPress={() => setSelection('ShapeGuessing')} style={[styles.button, {backgroundColor: '#2098b2'}]}/>
         </View>
       </View>
       <Button color={isDarkMode ? "#09ad50" : "black"} title="Start Game" onPress={() => navigation.navigate(selection)} />
@@ -34,28 +32,26 @@ const styles = StyleSheet.create({
   },
 
   main: {
-    flexDirection: 'column',
+    flexDirection: 'row',
     width: '100%',
     flex: 0.7,
-    top: -50,
+    // top: -50,
   },
 
   half: {
-    flexDirection: 'row',
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    marginLeft: 20,
   },
 
-  // button: {
-  //   width: 150,
-  //   height: 150,
-  //   justifyContent: 'center',
-  //   alignItems: 'center',
-  //   borderRadius: 20,
-  //   margin: 25,
-  // },
+  button: {
+    width: 150,
+    height: 450,
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderRadius: 20,
+    margin: 25,
+  },
 
   text: {
     fontSize: 24,

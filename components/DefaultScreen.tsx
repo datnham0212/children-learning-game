@@ -16,7 +16,7 @@ export function DefaultScreen({ navigation }: { navigation: any }) {
     
     <View style={styles.main}>
 
-        <Pressable onPress={() => navigation.navigate("Game1")} style={[styles.button, {backgroundColor: '#20B2AA'}]}>
+        <Pressable onPress={() => navigation.navigate("Game1")} style={[styles.button, {backgroundColor: '#2098b2'}]}>
           <Text style={[styles.text, {color: themeStyles.textColor}]}>MULTIPLE CHOICES</Text>
         </Pressable>
 
@@ -24,8 +24,8 @@ export function DefaultScreen({ navigation }: { navigation: any }) {
           <Text style={[styles.text, {color: themeStyles.textColor}]}>TRUE / FALSE</Text>
         </Pressable>
 
-        <Pressable onPress={() => navigation.navigate("Game3")} style={[styles.button, {backgroundColor: '#FFFF66'},]}>
-          <Text style={[styles.text, {color: themeStyles.textColor}]}>TRIVIA</Text>
+        <Pressable onPress={() => navigation.navigate("Game3")} style={[styles.button, {backgroundColor: '#FFC905'},]}>
+          <Text style={[styles.text, {color: themeStyles.textColor}]}>FILL IN</Text>
         </Pressable>
         
     </View>

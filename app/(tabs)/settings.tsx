@@ -68,11 +68,11 @@ export default function OptionsScreen() {
       <View style={styles.section}>
         <Text style={[styles.paragraph, {color: themeStyles.textColor}]}>Number of questions: </Text>
           <ScrollPicker
-            dataSource={["10", "20", "30", "40"]}
+            dataSource={["10", "15", "20", "25", "30"]}
             renderItem={(data) => {
-              return <Text style={{color: themeStyles.textColor, fontWeight: '500'}}>{data}</Text>;
+              return <Text style={[styles.paragraph, {color: themeStyles.textColor, fontWeight: '500'}]}>{data}</Text>;
             }}
-            wrapperHeight={150}
+            wrapperHeight={55}
             wrapperBackground={themeStyles.bgColor}
             itemHeight={60}
             highlightColor={themeStyles.bgColor}
@@ -82,11 +82,11 @@ export default function OptionsScreen() {
       <View style={styles.section}>
         <Text style={[styles.paragraph, {color: themeStyles.textColor}]}>Set timer (seconds): </Text>
             <ScrollPicker
-              dataSource={["Off", "10", "20", "30", "40"]}
+              dataSource={["Off", "10", "20", "30", "40", "50", "60"]}
               renderItem={(data) => {
-                return <Text style={{color: themeStyles.textColor, fontWeight: '500'}}>{data}</Text>;
+                return <Text style={[styles.paragraph, {color: themeStyles.textColor, fontWeight: '500'}]}>{data}</Text>;
               }}
-              wrapperHeight={150}
+              wrapperHeight={55}
               wrapperBackground={themeStyles.bgColor}
               itemHeight={60}
               highlightColor={themeStyles.bgColor}
