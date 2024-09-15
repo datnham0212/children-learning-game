@@ -9,11 +9,17 @@ export function GameScreen1({ navigation }: { navigation: any }) {
   
   return (
     <View style={[styles.container, { backgroundColor: themeStyles.bgColor }]}>
-      <Text style={[styles.text, {color: themeStyles.textColor}]}>Picture Guessing</Text>
-      <Text style={[styles.text, {color: themeStyles.textColor}]}>(Select one below)</Text>
+      {/* <Text style={[styles.text, {color: themeStyles.textColor}]}>Picture Guessing</Text>
+      <Text style={[styles.text, {color: themeStyles.textColor}]}>(Select one below)</Text> */}
       <View style={styles.main}>
-
-
+      
+      <View style={styles.half}>
+      
+        </View>
+        
+        <View style={styles.half}>
+          
+        </View>
       </View>
       <Button color={isDarkMode ? "#09ad50" : "black"} title="Start Game" onPress={() => navigation.navigate(selection)} />
     </View>
@@ -28,8 +34,18 @@ const styles = StyleSheet.create({
   },
 
   main: {
+    flexDirection: 'column',
+    width: '100%',
+    flex: 0.7,
+    top: -50,
+  },
+
+  half: {
     flexDirection: 'row',
-    flex: 0.7
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginLeft: 20,
   },
 
   // button: {

@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import Slider from '@react-native-community/slider';
 import { Switch, Text, View, StyleSheet } from 'react-native';
 import { useTheme } from '@/components/ThemeContext'; 
+import ScrollPicker from "react-native-wheel-scrollview-picker";
+
 
 export default function OptionsScreen() {
   const [isSoundEnabled, setIsSoundEnabled] = useState(true);
@@ -61,6 +63,34 @@ export default function OptionsScreen() {
           onValueChange={toggleLanguage}
           value={isLanguageSwitched}
         />
+      </View>
+
+      <View style={styles.section}>
+        <Text style={[styles.paragraph, {color: themeStyles.textColor}]}>Number of questions: </Text>
+          <ScrollPicker
+            dataSource={["10", "20", "30", "40"]}
+            renderItem={(data) => {
+              return <Text style={{color: themeStyles.textColor, fontWeight: '500'}}>{data}</Text>;
+            }}
+            wrapperHeight={150}
+            wrapperBackground={themeStyles.bgColor}
+            itemHeight={60}
+            highlightColor={themeStyles.bgColor}
+          />
+      </View>
+
+      <View style={styles.section}>
+        <Text style={[styles.paragraph, {color: themeStyles.textColor}]}>Set timer (seconds): </Text>
+            <ScrollPicker
+              dataSource={["Off", "10", "20", "30", "40"]}
+              renderItem={(data) => {
+                return <Text style={{color: themeStyles.textColor, fontWeight: '500'}}>{data}</Text>;
+              }}
+              wrapperHeight={150}
+              wrapperBackground={themeStyles.bgColor}
+              itemHeight={60}
+              highlightColor={themeStyles.bgColor}
+            />
       </View>
     </View>
   );
