@@ -12,14 +12,34 @@ export function GameScreen1({ navigation }: { navigation: any }) {
       <View style={styles.main}>
       
         <View style={styles.half}>
-          <Pressable onPress={() => setSelection('ShapeGuessing')} style={[styles.button, {backgroundColor: '#2098b2'}]}/>
+          <Pressable 
+            onPress={() => setSelection('ShapeGuessing')} 
+            style={[
+              styles.button, 
+              {backgroundColor: '#2098b2'},
+              selection === 'ShapeGuessing' && styles.selectedButton
+            ]}
+          >
+            <Text style={[styles.text, {color: themeStyles.textColor}]}>SHAPE GUESSING</Text>
+          </Pressable>
         </View>
         
         <View style={styles.half}>
-        <Pressable onPress={() => setSelection('ShapeGuessing')} style={[styles.button, {backgroundColor: '#2098b2'}]}/>
+          <Pressable 
+            onPress={() => setSelection('ColorGuessing')} 
+            style={[
+              styles.button, 
+              {backgroundColor: '#2098b2'},
+              selection === 'ColorGuessing' && styles.selectedButton
+            ]}
+          >
+            <Text style={[styles.text, {color: themeStyles.textColor}]}>COLOR GUESSING</Text>
+          </Pressable>
         </View>
       </View>
-      <Button color={isDarkMode ? "#09ad50" : "black"} title="Start Game" onPress={() => navigation.navigate(selection)} />
+      <View style={styles.start}>
+        <Button color={isDarkMode ? "#09ad50" : "black"} title="Start Game" onPress={() => navigation.navigate(selection)} />
+      </View>
     </View>
   );
 }
@@ -27,7 +47,7 @@ export function GameScreen1({ navigation }: { navigation: any }) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
+    // justifyContent: 'center',
     alignItems: 'center',
   },
 
@@ -35,7 +55,6 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     width: '100%',
     flex: 0.7,
-    // top: -50,
   },
 
   half: {
@@ -44,8 +63,14 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
 
+  start: {
+    flex: 0.2,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+
   button: {
-    width: 150,
+    width: 180,
     height: 450,
     justifyContent: 'center',
     alignItems: 'center',
@@ -56,5 +81,9 @@ const styles = StyleSheet.create({
   text: {
     fontSize: 24,
     fontWeight: 'bold',
+  },
+
+  selectedButton: {
+    backgroundColor: 'orange',
   },
 });
