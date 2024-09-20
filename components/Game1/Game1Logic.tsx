@@ -1,6 +1,6 @@
 import React from "react";
 import { View, Text, Image, TouchableOpacity } from "react-native";
-import { game2styles } from "./Game2Style";
+import { game2styles } from "./Game1Style";
 
 export const renderQuestion = (currentQuestion: { question: any; image: any; options: any; correctAnswer?: string; }, handleAnswer: { (option: any): void; (option: any): void; (arg0: any): void; }) => (
     <View style={game2styles.question}>

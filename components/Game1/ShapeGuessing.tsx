@@ -1,8 +1,8 @@
 import React from 'react';
 import { Text, View, Image, StyleSheet, TouchableOpacity } from 'react-native';
 import { useTheme } from '@/components/ThemeContext';
-import { game2styles } from './Game2Style';
-import { renderQuestion, renderResult, handleAnswer } from './Game2Logic';
+import { game2styles } from './Game1Style';
+import { renderQuestion, renderResult, handleAnswer } from './Game1Logic';
 // image: require(''),
 const questions = [
     { question: "Which shape is this?", image: '', options: ["Circle", "Square", "Triangle"], correctAnswer: "Circle" },

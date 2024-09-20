@@ -1,7 +1,7 @@
 import React from 'react';
 import { Text, View, Image, StyleSheet, Platform , TouchableOpacity} from 'react-native';
 import { useTheme } from '@/components/ThemeContext';
-import { renderQuestion, renderResult, handleAnswer } from './Game2Logic';
+import { renderQuestion, renderResult, handleAnswer } from './Game1Logic';
 
 const questions = [
     {
