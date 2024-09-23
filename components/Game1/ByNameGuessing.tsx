@@ -1,21 +1,53 @@
 import React from 'react';
-import { Text, View, Image, StyleSheet, TouchableOpacity } from 'react-native';
+import { Text, View } from 'react-native';
 import { useTheme } from '@/components/ThemeContext';
 import { game2styles } from './Game1Style';
 import { renderQuestion, renderResult, handleAnswer } from './Game1Logic';
-// image: require(''),
-const questions = [
-    { question: "Which shape is this?", image: '', options: ["Circle", "Square", "Triangle"], correctAnswer: "Circle" },
-    { question: "Which shape is this?", image: '', options: ["Rectangle", "Square", "Hexagon"], correctAnswer: "Square" },
-    { question: "Which shape is this?", image: '', options: ["Circle", "Pentagon", "Triangle"], correctAnswer: "Triangle" },
-    { question: "Which shape is this?", image: '', options: ["Square", "Diamond", "Triangle"], correctAnswer: "Diamond" },
-    { question: "Which shape is this?", image: '', options: ["Heart", "Circle", "Hexagon"], correctAnswer: "Heart" },
-    { question: "Which shape is this?", image: '', options: ["Circle", "Triangle", "Oval"], correctAnswer: "Oval" },
-    { question: "Which shape is this?", image: '', options: ["Rectangle", "Square", "Pentagon"], correctAnswer: "Pentagon" },
-    { question: "Which shape is this?", image: '', options: ["Rectangle", "Plus", "Hexagon"], correctAnswer: "Plus" },
-    { question: "Which shape is this?", image: '', options: ["Plus", "Star", "Triangle"], correctAnswer: "Star" },
-    { question: "Which shape is this?", image: '', options: ["Heart", "Star", "Rectangle"], correctAnswer: "Rectangle" },
+
+// Define possible shapes and their correct answers
+const shapes = [
+    { name: "Circle", image: require('../../assets/images/flags_of_the_world/tn_ac-flag.gif') },
+    { name: "Square", image: require('../../assets/images/flags_of_the_world/tn_ae-flag.gif') },
+    { name: "Triangle", image: require('../../assets/images/flags_of_the_world/tn_af-flag.gif') },
+    { name: "Rectangle", image: require('../../assets/images/flags_of_the_world/tn_ag-flag.gif') },
+    { name: "Diamond", image: '' },
+    { name: "Pentagon", image: '' },
+    { name: "Hexagon", image: '' },
+    { name: "Star", image: '' },
+    { name: "Heart", image: '' },
+    { name: "Oval", image: '' },
+    { name: "Plus", image: '' },
 ];
+
+const generateQuestions = (numQuestions : number) => {
+    const questions = [];
+    for (let i = 0; i < numQuestions; i++) {
+        // Randomly select a shape as the correct answer
+        const correctShape = shapes[Math.floor(Math.random() * shapes.length)];
+        
+        // Create a list of options including the correct answer and three random wrong answers
+        const options = [correctShape.name];
+        while (options.length < 4) {  // Change to 4 choices
+            const randomShape = shapes[Math.floor(Math.random() * shapes.length)];
+            if (!options.includes(randomShape.name)) {
+                options.push(randomShape.name);
+            }
+        }
+
+        // Shuffle options
+        const shuffledOptions = options.sort(() => Math.random() - 0.5);
+
+        questions.push({
+            question: "Which shape is this?",
+            image: correctShape.image, // Update with actual image path if available
+            options: shuffledOptions,
+            correctAnswer: correctShape.name,
+        });
+    }
+    return questions;
+};
+
+const questions = generateQuestions(10); // Generate 10 random questions
 
 export function ByNameGuessing() {
     const { themeStyles } = useTheme();
@@ -33,4 +65,3 @@ export function ByNameGuessing() {
         </View>
     );
 }
-
