@@ -1,8 +1,10 @@
 import React from 'react';
-import { Text, View, Image, StyleSheet, TouchableOpacity } from 'react-native';
+import { View } from 'react-native';
 import { useTheme } from '@/components/ThemeContext';
 import { game2styles } from './Game1Style';
 import { renderQuestion, renderResult, handleAnswer } from './Game1Logic';
+import { useQuiz } from '@/components/QuizContext';
+import { shuffle } from 'lodash';
 // image: require(''),
 const questions = [
     { question: "Which shape is this?", image: require('../../assets/images/flags_of_the_world/tn_ac-flag.gif'), options: ["Circle", "Square", "Triangle"], correctAnswer: "Circle" },
@@ -23,6 +25,17 @@ export function ByNameGuessing() {
     const [score, setScore] = React.useState(0);
     const [isQuizComplete, setIsQuizComplete] = React.useState(false);
 
+    const { questionQuantity } = useQuiz();
+    const [questions, setQuestions] = React.useState([]);
+
+    React.useEffect(() => {
+        const shuffleQuestions = () => {
+            const shuffledQuestions = shuffle(questions);
+            setQuestions(shuffledQuestions.slice(0, questionQuantity));
+        };
+        shuffleQuestions();
+    }, [questionQuantity]);
+
     const currentQuestion = questions[currentQuestionIndex];
 
     return (
@@ -33,4 +46,5 @@ export function ByNameGuessing() {
         </View>
     );
 }
+
 

@@ -14,6 +14,8 @@ export default function OptionsScreen() {
   const [isLanguageSwitched, setIsLanguageSwitched] = useState(false);
   const toggleLanguage = () => setIsLanguageSwitched(previousState => !previousState);
 
+  const [questionQuantity, setQuestionQuantity] = useState(10);
+
   return (
     <View style={[styles.container, { backgroundColor: themeStyles.bgColor }]}>
       <View style={styles.section}>
@@ -68,7 +70,12 @@ export default function OptionsScreen() {
       <View style={styles.section}>
         <Text style={[styles.paragraph, {color: themeStyles.textColor}]}>Number of questions: </Text>
           <ScrollPicker
+
             dataSource={["10", "15", "20", "25", "30"]}
+            selectedIndex={["10", "15", "20", "25", "30"].indexOf(questionQuantity.toString())}
+
+            onValueChange={(data) => setQuestionQuantity(parseInt(data || '0'))}
+
             renderItem={(data) => {
               return <Text style={[styles.paragraph, {color: themeStyles.textColor, fontWeight: '500'}]}>{data}</Text>;
             }}
@@ -99,7 +106,6 @@ export default function OptionsScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    // marginVertical: 50,
     display: 'flex',
     alignItems: 'center',
   },
