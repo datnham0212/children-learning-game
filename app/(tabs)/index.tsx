@@ -45,7 +45,7 @@ export default function HomeScreen() {
             
             <Stack.Screen name="Game2" component={GameScreen2} options={{ headerShown: true, title: '' , headerStyle: { backgroundColor: themeStyles.bgColor }}} />
             <Stack.Screen name="ByNameGuessing" component={ByNameGuessing} options={{ headerShown: true, title: '' , headerStyle: { backgroundColor: themeStyles.bgColor },  presentation: 'modal', animation: 'fade' }} />
-            <Stack.Screen name="ByFlagGuessing" component={ByFlagGuessing} options={{ headerShown: false,  presentation: 'modal', animation: 'fade' }} />
+            <Stack.Screen name="ByFlagGuessing" component={ByFlagGuessing} options={{ headerShown: true, title: '' , headerStyle: { backgroundColor: themeStyles.bgColor },  presentation: 'modal', animation: 'fade' }} />
             
             <Stack.Screen name="Game3" component={GameScreen3} options={{ headerShown: true, title: '' , headerStyle: { backgroundColor: themeStyles.bgColor }}} />
          

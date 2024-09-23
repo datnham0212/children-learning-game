@@ -5,7 +5,7 @@ import { useTheme } from '../ThemeContext';
 export function GameScreen1({ navigation }: { navigation: any }) {
 
   const { isDarkMode, toggleTheme, themeStyles } = useTheme();
-  const [ selection, setSelection ] = useState('ShapeGuessing'); 
+  const [ selection, setSelection ] = useState('ByNameGuessing'); 
   
   return (
     <View style={[styles.container, { backgroundColor: themeStyles.bgColor }]}>
