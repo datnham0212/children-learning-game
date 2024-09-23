@@ -5,7 +5,7 @@ import { game2styles } from './Game1Style';
 import { renderQuestion, renderResult, handleAnswer } from './Game1Logic';
 // image: require(''),
 const questions = [
-    { question: "Which shape is this?", image: '', options: ["Circle", "Square", "Triangle"], correctAnswer: "Circle" },
+    { question: "Which shape is this?", image: require('../../assets/images/flags_of_the_world/tn_ac-flag.gif'), options: ["Circle", "Square", "Triangle"], correctAnswer: "Circle" },
     { question: "Which shape is this?", image: '', options: ["Rectangle", "Square", "Hexagon"], correctAnswer: "Square" },
     { question: "Which shape is this?", image: '', options: ["Circle", "Pentagon", "Triangle"], correctAnswer: "Triangle" },
     { question: "Which shape is this?", image: '', options: ["Square", "Diamond", "Triangle"], correctAnswer: "Diamond" },
@@ -17,7 +17,7 @@ const questions = [
     { question: "Which shape is this?", image: '', options: ["Heart", "Star", "Rectangle"], correctAnswer: "Rectangle" },
 ];
 
-export function ShapeGuessing() {
+export function ByNameGuessing() {
     const { themeStyles } = useTheme();
     const [currentQuestionIndex, setCurrentQuestionIndex] = React.useState(0);
     const [score, setScore] = React.useState(0);

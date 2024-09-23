@@ -13,27 +13,27 @@ export function GameScreen1({ navigation }: { navigation: any }) {
       
         <View style={styles.half}>
           <Pressable 
-            onPress={() => setSelection('ShapeGuessing')} 
+            onPress={() => setSelection('ByNameGuessing')} 
             style={[
               styles.button, 
               {backgroundColor: '#2098b2'},
-              selection === 'ShapeGuessing' && styles.selectedButton
+              selection === 'ByNameGuessing' && styles.selectedButton
             ]}
           >
-            <Text style={[styles.text, {color: themeStyles.textColor}]}>SHAPE GUESSING</Text>
+            <Text style={[styles.text, {color: themeStyles.textColor}]}>ANSWER BY NAME</Text>
           </Pressable>
         </View>
         
         <View style={styles.half}>
           <Pressable 
-            onPress={() => setSelection('ColorGuessing')} 
+            onPress={() => setSelection('ByFlagGuessing')} 
             style={[
               styles.button, 
               {backgroundColor: '#2098b2'},
-              selection === 'ColorGuessing' && styles.selectedButton
+              selection === 'ByFlagGuessing' && styles.selectedButton
             ]}
           >
-            <Text style={[styles.text, {color: themeStyles.textColor}]}>COLOR GUESSING</Text>
+            <Text style={[styles.text, {color: themeStyles.textColor}]}>ANSWER BY FLAG</Text>
           </Pressable>
         </View>
       </View>

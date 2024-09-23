@@ -20,7 +20,7 @@ const questions = [
 
 ];
 
-export function ColorGuessing() {
+export function ByFlagGuessing() {
     const { themeStyles } = useTheme();
     const [currentQuestionIndex, setCurrentQuestionIndex] = React.useState(0);
     const [score, setScore] = React.useState(0);

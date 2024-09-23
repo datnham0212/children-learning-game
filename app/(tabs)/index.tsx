@@ -4,8 +4,8 @@ import OptionsScreen from './settings';
 import { GameScreen2 } from '@/components/Game2/GameScreen2';
 
 import { GameScreen1 } from '@/components/Game1/GameScreen1';
-import { ShapeGuessing } from '@/components/Game1/ShapeGuessing';
-import { ColorGuessing } from '@/components/Game1/ColorGuessing';
+import { ByFlagGuessing } from '@/components/Game1/ByFlagGuessing';
+import { ByNameGuessing } from '@/components/Game1/ByNameGuessing';
 
 import { GameScreen3 } from '@/components/Game3/GameScreen3';
 
@@ -44,8 +44,8 @@ export default function HomeScreen() {
             <Stack.Screen name="Game1" component={GameScreen1} options={{ headerShown: true, title: '' , headerStyle: { backgroundColor: themeStyles.bgColor } }} />
             
             <Stack.Screen name="Game2" component={GameScreen2} options={{ headerShown: true, title: '' , headerStyle: { backgroundColor: themeStyles.bgColor }}} />
-            <Stack.Screen name="ShapeGuessing" component={ShapeGuessing} options={{ headerShown: true, title: '' , headerStyle: { backgroundColor: themeStyles.bgColor },  presentation: 'modal', animation: 'fade' }} />
-            <Stack.Screen name="ColorGuessing" component={ColorGuessing} options={{ headerShown: false,  presentation: 'modal', animation: 'fade' }} />
+            <Stack.Screen name="ByNameGuessing" component={ByNameGuessing} options={{ headerShown: true, title: '' , headerStyle: { backgroundColor: themeStyles.bgColor },  presentation: 'modal', animation: 'fade' }} />
+            <Stack.Screen name="ByFlagGuessing" component={ByFlagGuessing} options={{ headerShown: false,  presentation: 'modal', animation: 'fade' }} />
             
             <Stack.Screen name="Game3" component={GameScreen3} options={{ headerShown: true, title: '' , headerStyle: { backgroundColor: themeStyles.bgColor }}} />
          
